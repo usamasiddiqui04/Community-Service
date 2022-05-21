@@ -192,6 +192,7 @@ class SignupFragment : Fragment() {
                         val dialog: Dialog = builder.create()
                         dialog.show()
                     }
+
                     databaseReference.addValueEventListener(object : ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
                             val hashMap: HashMap<String, String> = HashMap()

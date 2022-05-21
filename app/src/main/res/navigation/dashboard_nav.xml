@@ -9,5 +9,14 @@
         android:id="@+id/dashBoardScreen"
         android:name="com.bytee.communityservice.DashBoardScreen"
         android:label="dash_board_screen"
-        tools:layout="@layout/dash_board_screen" />
+        tools:layout="@layout/dash_board_screen" >
+        <action
+            android:id="@+id/action_dashBoardScreen_to_handiCapFragement"
+            app:destination="@id/handiCapFragement" />
+    </fragment>
+    <fragment
+        android:id="@+id/handiCapFragement"
+        android:name="com.bytee.communityservice.HandiCapFragement"
+        android:label="fragment_handi_cap_fragement"
+        tools:layout="@layout/fragment_handi_cap_fragement" />
 </navigation>
