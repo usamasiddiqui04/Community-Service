@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/intial_nav_graph"
+    app:startDestination="@id/splahScreen">
+
+    <fragment
+        android:id="@+id/splahScreen"
+        android:name="com.bytee.communityservice.ui.SplashScreen"
+        android:label="fragment_splah_screen"
+        tools:layout="@layout/fragment_splah_screen">
+
+        <action
+            android:id="@+id/action_splahScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.bytee.communityservice.ui.LoginScreen"
+        android:label="fragment_login_screen"
+        tools:layout="@layout/fragment_login_screen">
+
+        <action
+            android:id="@+id/action_loginScreen_to_singupFragment"
+            app:destination="@id/singupFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/singupFragment2"
+        android:name="com.bytee.communityservice.ui.SignupFragment"
+        android:label="fragment_singup"
+        tools:layout="@layout/fragment_singup" />
+
+
+</navigation>
