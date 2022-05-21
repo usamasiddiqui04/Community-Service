@@ -10,4 +10,36 @@
         android:name="com.bytee.communityservice.DashBoardScreen"
         android:label="dash_board_screen"
         tools:layout="@layout/dash_board_screen" />
+    <fragment
+        android:id="@+id/handiCappedDashboardFragment"
+        android:name="com.bytee.communityservice.HandiCappedDashboardFragment"
+        android:label="fragment_handi_capped_dashboard"
+        tools:layout="@layout/fragment_handi_capped_dashboard" >
+        <action
+            android:id="@+id/action_handiCappedDashboardFragment_to_dashBoardScreen"
+            app:destination="@id/dashBoardScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/environmentalDriveDashboardFragment"
+        android:name="com.bytee.communityservice.EnvironmentalDriveDashboardFragment"
+        android:label="fragment_environmental_drive_dashboard"
+        tools:layout="@layout/fragment_environmental_drive_dashboard" >
+        <action
+            android:id="@+id/action_environmentalDriveDashboardFragment_to_dashBoardScreen"
+            app:destination="@id/dashBoardScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/bloodDonationDashboardFragment"
+        android:name="com.bytee.communityservice.BloodDonationDashboardFragment"
+        android:label="fragment_blood_donation_dashboard"
+        tools:layout="@layout/fragment_blood_donation_dashboard" >
+        <action
+            android:id="@+id/action_bloodDonationDashboardFragment_to_dashBoardScreen"
+            app:destination="@id/dashBoardScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/shareAMealFragment"
+        android:name="com.bytee.communityservice.ShareAMealFragment"
+        android:label="fragment_share_a_meal"
+        tools:layout="@layout/fragment_share_a_meal" />
 </navigation>
