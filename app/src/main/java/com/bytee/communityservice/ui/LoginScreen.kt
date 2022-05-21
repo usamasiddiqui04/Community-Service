@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -60,10 +61,31 @@ class LoginScreen : Fragment() {
         binding.buttonLogin.setOnClickListener {
             email = binding.emailEditText.text.toString()
             password = binding.passWordEditText.text.toString()
+
+            if (email.isEmpty()) {
+                binding.emailTextInputLayout.isErrorEnabled = true
+                binding.emailTextInputLayout.helperText = "this is a required field"
+                return@setOnClickListener
+            }
+
+            if (password.isEmpty()) {
+                binding.passwordTextInputLayout.isErrorEnabled = true
+                binding.passwordTextInputLayout.helperText = "this is a required filed"
+
+                return@setOnClickListener
+            }
+
+            if (password.length < 8) {
+                binding.passwordTextInputLayout.isErrorEnabled = true
+                binding.passwordTextInputLayout.helperText =
+                    "password length should be greater than 8 characters"
+
+                return@setOnClickListener
+            }
+
             firebaseLogin()
 
         }
-
 
     }
 
@@ -73,6 +95,7 @@ class LoginScreen : Fragment() {
                 if (task.isSuccessful) {
                     if (auth.currentUser!!.isEmailVerified) {
 
+                        Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
                     } else {
                         val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
                         builder.setTitle("Please verify your email")
@@ -84,6 +107,8 @@ class LoginScreen : Fragment() {
                     }
                 } else {
 
+                    Toast.makeText(requireContext(), task.exception.toString(), Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
     }

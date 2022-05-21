@@ -1,6 +1,7 @@
 package com.bytee.communityservice.ui
 
-import android.content.Intent
+import android.app.AlertDialog
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,25 +11,23 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.databinding.FragmentSingupBinding
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 
 class SignupFragment : Fragment() {
 
-    lateinit var _binding: FragmentSingupBinding
+    private lateinit var _binding: FragmentSingupBinding
     private val binding get() = _binding
     lateinit var email: String
     lateinit var password: String
-    lateinit var firebaseDatabase: FirebaseDatabase
-
-    // creating a variable for our Database
-    // Reference for Firebase.
+    private lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var databaseReference: DatabaseReference
-
-
     lateinit var auth: FirebaseAuth
+    lateinit var fullName: String
+    lateinit var phoneNumber: String
+    lateinit var confirmPassword: String
+    var validationPass = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,6 +63,79 @@ class SignupFragment : Fragment() {
         binding.buttonLogin.setOnClickListener {
             email = binding.emailEditText.text.toString()
             password = binding.passWordEditText.text.toString()
+            phoneNumber = binding.phoneNumberEditText.text.toString()
+            fullName = binding.nameEditText.text.toString()
+            confirmPassword = binding.confirmPassWordEditText.text.toString()
+
+
+
+            if (fullName.isEmpty()) {
+                binding.nameTextInputLayout.helperText = "this is a required number"
+                return@setOnClickListener
+            } else {
+                binding.nameTextInputLayout.helperText = ""
+            }
+
+            if (email.isEmpty()) {
+                binding.emailTextInputLayout.helperText = "this is a required number"
+                return@setOnClickListener
+            } else {
+                binding.emailTextInputLayout.helperText = ""
+            }
+
+
+            if (phoneNumber.isEmpty()) {
+                binding.phoneNumberTextInputLayout.helperText = "this is a required filed"
+                return@setOnClickListener
+            } else {
+                binding.phoneNumberTextInputLayout.helperText = ""
+            }
+
+            if (phoneNumber.length < 11) {
+                binding.phoneNumberTextInputLayout.helperText = "invalid phone number"
+                return@setOnClickListener
+            } else {
+                binding.phoneNumberTextInputLayout.helperText = ""
+            }
+
+            if (password.isEmpty()) {
+                binding.passwordTextInputLayout.helperText = "this is a required filed"
+                return@setOnClickListener
+            } else {
+                binding.phoneNumberTextInputLayout.helperText = ""
+            }
+
+            if (password.length < 8) {
+                binding.passwordTextInputLayout.helperText =
+                    "password length should be greater than 8 characters"
+                return@setOnClickListener
+            } else {
+                binding.phoneNumberTextInputLayout.helperText = ""
+            }
+
+            if (confirmPassword.isEmpty()) {
+                binding.confirmPasswordTextInputLayout.helperText = "this is a required filed"
+                return@setOnClickListener
+            } else {
+                binding.confirmPasswordTextInputLayout.helperText = ""
+            }
+
+            if (confirmPassword.length < 8) {
+                binding.confirmPasswordTextInputLayout.helperText =
+                    "password length should be greater than 8 characters"
+                return@setOnClickListener
+            } else {
+                binding.confirmPasswordTextInputLayout.helperText = ""
+            }
+
+            if (!password.equals(confirmPassword)) {
+                binding.confirmPasswordTextInputLayout.helperText =
+                    "password not match please try again"
+                return@setOnClickListener
+            } else {
+                binding.confirmPasswordTextInputLayout.helperText = ""
+            }
+
             firebaseLogin()
         }
     }
@@ -74,9 +146,6 @@ class SignupFragment : Fragment() {
             .addOnCompleteListener(
                 requireActivity()
             ) { task ->
-                // If sign in fails, display a message to the user. If sign in succeeds
-                // the auth state listener will be notified and logic to handle the
-                // signed in user can be handled in the listener.
                 if (!task.isSuccessful) {
                     binding.progressBar.visibility = View.GONE
                     Toast.makeText(
@@ -86,36 +155,31 @@ class SignupFragment : Fragment() {
                 } else {
 
                     auth.currentUser!!.sendEmailVerification().addOnCompleteListener {
-                        Toast.makeText(
-                            requireContext(),
-                            "Registered , Check email to verified",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("Register successfully , verification link sent to your given email $email")
+                        builder.setPositiveButton(
+                            "OK"
+                        ) { dialog, which -> dialog.cancel() }
+                        val dialog: Dialog = builder.create()
+                        dialog.show()
                     }
                     databaseReference.addValueEventListener(object : ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
-                            // inside the method of on Data change we are setting
-                            // our object class to our database reference.
-                            // data base reference will sends data to firebase.
-                            val hashMap : HashMap<String,String> = HashMap()
+                            val hashMap: HashMap<String, String> = HashMap()
 
                             hashMap["name"] = binding.nameEditText.text.toString()
                             hashMap["email"] = email
+                            hashMap["phoneNumber"] = binding.phoneNumberEditText.text.toString()
                             hashMap["id"] = auth.currentUser!!.uid
 
                             databaseReference.child(auth.currentUser!!.uid).setValue(hashMap)
 
-                            // after adding this data we are showing toast message.
-                            Toast.makeText(requireContext(), "data added", Toast.LENGTH_SHORT)
-                                .show()
                         }
 
                         override fun onCancelled(error: DatabaseError) {
-                            // if the data is not added or it is cancelled then
-                            // we are displaying a failure toast message.
                             Toast.makeText(
                                 requireContext(),
-                                "Fail to add data $error",
+                                "$error",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
