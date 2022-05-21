@@ -2,6 +2,7 @@ package com.bytee.communityservice.ui
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
@@ -11,8 +12,10 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.bytee.communityservice.DashBoardScreen
 import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.FragmentLoginScreenBinding
+import com.bytee.communityservice.module.DashBoardActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -43,6 +46,7 @@ class LoginScreen : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
+
 
         binding.singupTextView.setOnClickListener {
             findNavController().navigate(R.id.action_loginScreen_to_singupFragment)
@@ -105,8 +109,8 @@ class LoginScreen : Fragment() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     if (auth.currentUser!!.isEmailVerified) {
-
-                        Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(requireContext() , DashBoardActivity::class.java))
+                        activity?.finish()
                     } else {
                         val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
                         builder.setTitle("Please verify your email")

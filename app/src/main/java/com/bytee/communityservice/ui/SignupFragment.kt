@@ -175,7 +175,7 @@ class SignupFragment : Fragment() {
                 if (!task.isSuccessful) {
                     binding.progressBar.visibility = View.GONE
                     Toast.makeText(
-                        requireContext(),  task.exception.toString(),
+                        requireContext(), task.exception.toString(),
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {
@@ -185,7 +185,10 @@ class SignupFragment : Fragment() {
                         builder.setTitle("Register successfully , verification link sent to your given email $email")
                         builder.setPositiveButton(
                             "OK"
-                        ) { dialog, which -> dialog.cancel() }
+                        ) { dialog, which ->
+                            findNavController().popBackStack()
+                            dialog.cancel()
+                        }
                         val dialog: Dialog = builder.create()
                         dialog.show()
                     }
