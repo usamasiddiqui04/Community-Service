@@ -3,6 +3,7 @@ package com.bytee.communityservice.ui
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,7 @@ class SignupFragment : Fragment() {
     lateinit var phoneNumber: String
     lateinit var confirmPassword: String
     var validationPass = false
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,6 +57,32 @@ class SignupFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
 
 
+
+        binding.showPassword.setOnClickListener {
+            binding.passWordEditText.transformationMethod = null
+            binding.hidePassword.visibility = View.VISIBLE
+            binding.showPassword.visibility = View.GONE
+        }
+
+        binding.hidePassword.setOnClickListener {
+            binding.passWordEditText.transformationMethod = PasswordTransformationMethod()
+            binding.hidePassword.visibility = View.GONE
+            binding.showPassword.visibility = View.VISIBLE
+        }
+
+
+        binding.showConfirmPassword.setOnClickListener {
+            binding.confirmPassWordEditText.transformationMethod = null
+            binding.hideConfirmPassword.visibility = View.VISIBLE
+            binding.showConfirmPassword.visibility = View.GONE
+        }
+
+        binding.hideConfirmPassword.setOnClickListener {
+            binding.confirmPassWordEditText.transformationMethod = PasswordTransformationMethod()
+            binding.hideConfirmPassword.visibility = View.GONE
+            binding.showConfirmPassword.visibility = View.VISIBLE
+        }
+
         binding.singupTextView.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -66,7 +94,6 @@ class SignupFragment : Fragment() {
             phoneNumber = binding.phoneNumberEditText.text.toString()
             fullName = binding.nameEditText.text.toString()
             confirmPassword = binding.confirmPassWordEditText.text.toString()
-
 
 
             if (fullName.isEmpty()) {
@@ -82,7 +109,6 @@ class SignupFragment : Fragment() {
             } else {
                 binding.emailTextInputLayout.helperText = ""
             }
-
 
             if (phoneNumber.isEmpty()) {
                 binding.phoneNumberTextInputLayout.helperText = "this is a required filed"
@@ -149,7 +175,7 @@ class SignupFragment : Fragment() {
                 if (!task.isSuccessful) {
                     binding.progressBar.visibility = View.GONE
                     Toast.makeText(
-                        requireContext(), "Authentication failed." + task.exception,
+                        requireContext(),  task.exception.toString(),
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {

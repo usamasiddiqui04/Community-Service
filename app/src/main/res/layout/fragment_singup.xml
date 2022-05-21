@@ -139,11 +139,32 @@
                 android:layout_marginBottom="10dp"
                 android:inputType="textPassword"
                 android:paddingTop="20dp"
-                android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/showPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/passwordTextInputLayout"
+            app:layout_constraintBottom_toBottomOf="@id/passwordTextInputLayout"
+            app:layout_constraintEnd_toEndOf="@id/passwordTextInputLayout"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_baseline_remove_red_eye_24"/>
+
+        <ImageView
+            android:id="@+id/hidePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/passwordTextInputLayout"
+            app:layout_constraintBottom_toBottomOf="@id/passwordTextInputLayout"
+            app:layout_constraintEnd_toEndOf="@id/passwordTextInputLayout"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_baseline_visibility_off_24"/>
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -167,11 +188,32 @@
                 android:layout_marginBottom="10dp"
                 android:inputType="textPassword"
                 android:paddingTop="20dp"
-                android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/showConfirmPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/confirmPasswordTextInputLayout"
+            app:layout_constraintBottom_toBottomOf="@id/confirmPasswordTextInputLayout"
+            app:layout_constraintEnd_toEndOf="@id/confirmPasswordTextInputLayout"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_baseline_remove_red_eye_24"/>
+
+        <ImageView
+            android:id="@+id/hideConfirmPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/confirmPasswordTextInputLayout"
+            app:layout_constraintBottom_toBottomOf="@id/confirmPasswordTextInputLayout"
+            app:layout_constraintEnd_toEndOf="@id/confirmPasswordTextInputLayout"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_baseline_visibility_off_24"/>
 
 
         <Button

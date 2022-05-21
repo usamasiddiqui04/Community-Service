@@ -1,6 +1,5 @@
 package com.bytee.communityservice.utils
 
-import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.graphics.BlendMode
@@ -10,7 +9,7 @@ import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.core.content.res.ResourcesCompat
-import com.bytee.communityservice.MainActivity
+import com.bytee.communityservice.module.RegistrationActivity
 import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.ProgressdialogBinding
 
@@ -25,7 +24,7 @@ class CustomProgressDialog {
     }
 
     fun show(context: Context, title: CharSequence?): Dialog {
-        val inflater = (context as MainActivity).layoutInflater
+        val inflater = (context as RegistrationActivity).layoutInflater
         view = ProgressdialogBinding.inflate(inflater)
         if (title != null) {
 

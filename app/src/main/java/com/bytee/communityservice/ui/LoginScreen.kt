@@ -3,6 +3,7 @@ package com.bytee.communityservice.ui
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase
 class LoginScreen : Fragment() {
 
 
-    lateinit var _binding: FragmentLoginScreenBinding
+    private lateinit var _binding: FragmentLoginScreenBinding
     private val binding get() = _binding
     lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var databaseReference: DatabaseReference
@@ -35,7 +36,6 @@ class LoginScreen : Fragment() {
         _binding = FragmentLoginScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -56,6 +56,19 @@ class LoginScreen : Fragment() {
                 }
             }
         requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
+
+
+        binding.showPassword.setOnClickListener {
+            binding.passWordEditText.transformationMethod = null
+            binding.hidePassword.visibility = View.VISIBLE
+            binding.showPassword.visibility = View.GONE
+        }
+
+        binding.hidePassword.setOnClickListener {
+            binding.passWordEditText.transformationMethod = PasswordTransformationMethod()
+            binding.hidePassword.visibility = View.GONE
+            binding.showPassword.visibility = View.VISIBLE
+        }
 
 
         binding.buttonLogin.setOnClickListener {
@@ -82,9 +95,7 @@ class LoginScreen : Fragment() {
 
                 return@setOnClickListener
             }
-
             firebaseLogin()
-
         }
 
     }
