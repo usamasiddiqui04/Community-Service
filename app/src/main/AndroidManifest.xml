@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CommunityService">
         <activity
+            android:name=".module.FormActivity"
+            android:exported="false" />
+        <activity
             android:name=".module.DashBoardActivity"
             android:exported="false" />
         <activity

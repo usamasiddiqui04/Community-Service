@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/form_nav"
+    app:startDestination="@id/form">
+
+    <fragment
+        android:id="@+id/form"
+        android:name="com.bytee.communityservice.ui.form.Form"
+        android:label="fragment_handi_cap_form"
+        tools:layout="@layout/fragment_form" >
+        <action
+            android:id="@+id/action_form_to_bloodForm"
+            app:destination="@id/bloodForm" />
+    </fragment>
+    <fragment
+        android:id="@+id/bloodForm"
+        android:name="com.bytee.communityservice.ui.form.BloodForm"
+        android:label="fragment_blood_form"
+        tools:layout="@layout/fragment_blood_form" />
+
+
+</navigation>

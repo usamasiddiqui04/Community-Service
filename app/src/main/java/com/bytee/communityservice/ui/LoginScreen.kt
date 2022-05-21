@@ -12,13 +12,13 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.bytee.communityservice.DashBoardScreen
 import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.FragmentLoginScreenBinding
 import com.bytee.communityservice.module.DashBoardActivity
+import com.bytee.communityservice.module.FormActivity
+import com.bytee.communityservice.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 
 class LoginScreen : Fragment() {
@@ -31,6 +31,8 @@ class LoginScreen : Fragment() {
     lateinit var auth: FirebaseAuth
     lateinit var email: String
     lateinit var password: String
+    lateinit var prefs: Prefs
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +48,8 @@ class LoginScreen : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseReference = firebaseDatabase.reference.child("Users")
+        prefs = Prefs(requireContext())
 
 
         binding.singupTextView.setOnClickListener {
@@ -108,18 +112,52 @@ class LoginScreen : Fragment() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    if (auth.currentUser!!.isEmailVerified) {
-                        startActivity(Intent(requireContext() , DashBoardActivity::class.java))
-                        activity?.finish()
-                    } else {
-                        val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("Please verify your email")
-                        builder.setPositiveButton(
-                            "OK"
-                        ) { dialog, which -> dialog.cancel() }
-                        val dialog: Dialog = builder.create()
-                        dialog.show()
-                    }
+//                    if (auth.currentUser!!.isEmailVerified) {
+
+                        databaseReference.child(auth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
+                            override fun onDataChange(snapshot: DataSnapshot) {
+                                val type = snapshot.child("accountType").value.toString()
+                                val name = snapshot.child("name").value.toString()
+                                val phoneNumber = snapshot.child("phoneNumber").value.toString()
+                                val email = snapshot.child("email").value.toString()
+
+                                prefs.name = name
+                                prefs.email = email
+                                prefs.phoneNumber = phoneNumber
+                                prefs.type = type
+
+                                if(type == "Normal"){
+                                    startActivity(Intent(requireContext() , DashBoardActivity::class.java))
+                                    activity?.finish()
+                                }else {
+                                    startActivity(Intent(requireContext() , FormActivity::class.java))
+                                    activity?.finish()
+                                }
+
+
+                            }
+
+                            override fun onCancelled(error: DatabaseError) {
+                                // calling on cancelled method when we receive
+                                // any error or we are not able to get the data.
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Fail to get data.",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        })
+
+
+//                    } else {
+//                        val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+//                        builder.setTitle("Please verify your email")
+//                        builder.setPositiveButton(
+//                            "OK"
+//                        ) { dialog, which -> dialog.cancel() }
+//                        val dialog: Dialog = builder.create()
+//                        dialog.show()
+//                    }
                 } else {
 
                     Toast.makeText(requireContext(), task.exception.toString(), Toast.LENGTH_SHORT)
