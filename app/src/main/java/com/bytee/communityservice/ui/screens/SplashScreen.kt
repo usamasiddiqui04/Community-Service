@@ -19,7 +19,6 @@ import com.google.firebase.auth.FirebaseAuth
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : Fragment() {
 
-
     lateinit var _binding: FragmentSplahScreenBinding
     private val binding get() = _binding
 
