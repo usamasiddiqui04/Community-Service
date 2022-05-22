@@ -1,6 +1,5 @@
 package com.bytee.communityservice.ui
 
-import android.R
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
@@ -16,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.databinding.FragmentSingupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import java.util.regex.Pattern
 
 
 class SignupFragment : Fragment() {
@@ -149,6 +149,13 @@ class SignupFragment : Fragment() {
             binding.nameTextInputLayout.helperText = ""
         }
 
+        if(!checkEmail(email)){
+            binding.emailTextInputLayout.helperText = "Invalid email"
+            boolean = false
+        }else{
+            binding.emailTextInputLayout.helperText = ""
+        }
+
         if (phoneNumber.length < 10) {
             binding.phoneNumberTextInputLayout.helperText = "invalid phone number"
             boolean = false
@@ -196,6 +203,21 @@ class SignupFragment : Fragment() {
 
         return boolean
     }
+
+
+    private fun checkEmail(email: String): Boolean {
+        return emailAddressPattern.matcher(email).matches()
+    }
+
+    private val emailAddressPattern: Pattern = Pattern.compile(
+        "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                "\\@" +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                "(" +
+                "\\." +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                ")+"
+    )
 
     private fun firebaseLogin() {
         binding.progressBar.visibility = View.VISIBLE
