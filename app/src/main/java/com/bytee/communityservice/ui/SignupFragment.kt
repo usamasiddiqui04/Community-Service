@@ -1,5 +1,6 @@
 package com.bytee.communityservice.ui
 
+import android.R
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
@@ -29,6 +31,8 @@ class SignupFragment : Fragment() {
     lateinit var phoneNumber: String
     lateinit var confirmPassword: String
     var validationPass = false
+
+    private var acountType = arrayOf("Normal", "Handicap", "Orphans", "Blood", "Environmental" , "Share a meal")
 
 
     override fun onCreateView(
@@ -57,6 +61,11 @@ class SignupFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
 
 
+        val adapter = ArrayAdapter(requireContext(), R.layout.simple_spinner_item, acountType)
+
+        adapter.setDropDownViewResource(R.layout.simple_spinner_item)
+
+        binding.spinnerType.adapter = adapter
 
         binding.showPassword.setOnClickListener {
             binding.passWordEditText.transformationMethod = null
@@ -192,7 +201,8 @@ class SignupFragment : Fragment() {
                         val dialog: Dialog = builder.create()
                         dialog.show()
                     }
-                    databaseReference.addValueEventListener(object : ValueEventListener {
+
+                    databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
                             val hashMap: HashMap<String, String> = HashMap()
 
@@ -200,6 +210,7 @@ class SignupFragment : Fragment() {
                             hashMap["email"] = email
                             hashMap["phoneNumber"] = binding.phoneNumberEditText.text.toString()
                             hashMap["id"] = auth.currentUser!!.uid
+                            hashMap["accountType"] = binding.spinnerType.selectedItem.toString()
 
                             databaseReference.child(auth.currentUser!!.uid).setValue(hashMap)
 

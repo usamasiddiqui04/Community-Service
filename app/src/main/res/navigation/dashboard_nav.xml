@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/dashBoardScreen"
-        android:name="com.bytee.communityservice.DashBoardScreen"
+        android:name="com.bytee.communityservice.ui.DashBoardScreen"
         android:label="dash_board_screen"
         tools:layout="@layout/dash_board_screen" />
     <fragment
@@ -42,4 +42,7 @@
         android:name="com.bytee.communityservice.ShareAMealFragment"
         android:label="fragment_share_a_meal"
         tools:layout="@layout/fragment_share_a_meal" />
+        tools:layout="@layout/dash_board_screen" >
+    </fragment>
+
 </navigation>

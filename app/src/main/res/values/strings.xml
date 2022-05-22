@@ -3,4 +3,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="assist_handicapped">Assist Handicapped</string>
+
+    <string-array name="type">
+        <item>Environment</item>
+        <item>Blood</item>
+        <item>Handicap</item>
+        <item>Share Meal</item>
+        <item>Orphans</item>
+    </string-array>
+
 </resources>

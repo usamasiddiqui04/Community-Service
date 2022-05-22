@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.FragmentSplahScreenBinding
 import com.bytee.communityservice.module.DashBoardActivity
+import com.bytee.communityservice.module.FormActivity
+import com.bytee.communityservice.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -23,6 +25,7 @@ class SplashScreen : Fragment() {
     private val binding get() = _binding
 
     lateinit var auth: FirebaseAuth
+    lateinit var prefs: Prefs
 
 
     override fun onCreateView(
@@ -37,17 +40,23 @@ class SplashScreen : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
-
+        prefs = Prefs(requireContext())
 
         val background: Thread = object : Thread() {
             override fun run() {
                 try {
                     sleep((2 * 1000).toLong())
 
-                    if(auth.currentUser?.uid == null){
+                    if (auth.currentUser?.uid == null) {
                         findNavController().navigate(R.id.action_splahScreen_to_loginScreen)
-                    }else{
-                        startActivity(Intent(requireContext() , DashBoardActivity::class.java))
+                    } else {
+
+                        if (prefs.type.equals("Normal"))
+                            startActivity(Intent(requireContext(), DashBoardActivity::class.java))
+                        else
+                            startActivity(Intent(requireContext(), FormActivity::class.java))
+
+
                     }
 
 

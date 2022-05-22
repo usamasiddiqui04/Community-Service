@@ -66,9 +66,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordTextInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -90,6 +87,7 @@
             android:layout_marginBottom="10dp"
             android:inputType="textPassword"
             android:paddingTop="20dp"
+            android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"/>
 
