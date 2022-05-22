@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bytee.communityservice.R
 
-class CustomAdapter(private val title: Array<String>) :
+class CustomAdapter(private val title: ArrayList<String>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     /**
@@ -20,6 +20,9 @@ class CustomAdapter(private val title: Array<String>) :
         init {
             // Define click listener for the ViewHolder's View.
             textView = view.findViewById(R.id.tv_title)
+//            itemView.setOnClickListener {
+//                onItemClick?.invoke(contacts[adapterPosition])
+//            }
         }
     }
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.DashBoardScreenBinding
 import com.bytee.communityservice.databinding.FragmentHandiCappedDashboardBinding
 
@@ -24,10 +25,19 @@ class HandiCappedDashboardFragment : Fragment() {
         _binding = FragmentHandiCappedDashboardBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.ivBackArrow.setOnClickListener {
             findNavController().popBackStack()
+        }
+
+        binding.cvJoinEvent.setOnClickListener {
+            findNavController().navigate(R.id.joinHandyCappedEventListFragment)
+        }
+
+        binding.cvLocateWheelChair.setOnClickListener {
+            findNavController().navigate(R.id.availableWheelChairListFragment)
         }
 
     }

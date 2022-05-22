@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.DashBoardScreenBinding
 import com.bytee.communityservice.model.BloodDonor
+import com.bytee.communityservice.model.Handicap
 import com.bytee.communityservice.module.RegistrationActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -24,7 +25,7 @@ class DashBoardScreen : Fragment() {
     private lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var databaseReference: DatabaseReference
     lateinit var auth: FirebaseAuth
-    val list = arrayListOf<BloodDonor>()
+    val list = arrayListOf<Handicap>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -123,12 +124,18 @@ class DashBoardScreen : Fragment() {
 //            }
 //        })
 
-        val ref = FirebaseDatabase.getInstance().reference.child("Blood")
+        val ref = FirebaseDatabase.getInstance().reference.child("Handicap Drive")
         ref.addListenerForSingleValueEvent(
             object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     //Get map of users in datasnapshot
-                    Log.d("","")
+//                    for (postSnapshot in dataSnapshot.children) {
+//                        val user: Handicap? = postSnapshot.getValue(Handicap::class.java)
+//                        list.add(user!!);
+//                    }
+
+
+                    Log.d("", "")
 //                    collectPhoneNumbers(dataSnapshot.value as Map<String?, Any?>?)
                 }
 
@@ -138,5 +145,18 @@ class DashBoardScreen : Fragment() {
             })
     }
 
+//    private fun collectBloodItems(bloodList: Map<String, Any>) {
+//        val phoneNumbers: ArrayList<Long?> = ArrayList()
+//
+//        //iterate through each user, ignoring their UID
+//        for ((_, value): Map.Entry<String, Any> in bloodList) {
+//
+//            //Get user map
+//            val singleUser = value as Map<*, *>
+//            //Get phone field and append to list
+//            phoneNumbers.add(singleUser["phone"] as Long?)
+//        }
+//        System.out.println(phoneNumbers.toString())
+//    }
 
 }
