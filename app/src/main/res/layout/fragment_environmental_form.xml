@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="Environmental Drive"
+            android:text="Environment Drive"
             android:fontFamily="@font/poppins_bold"
             android:textColor="@color/app_blue"
             android:textSize="24sp"/>
