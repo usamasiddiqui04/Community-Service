@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_form_to_orphangeForm"
             app:destination="@id/orphangeForm" />
+        <action
+            android:id="@+id/action_form_to_shareMealForm"
+            app:destination="@id/shareMealForm" />
     </fragment>
     <fragment
         android:id="@+id/bloodForm"
@@ -35,6 +38,11 @@
         android:name="com.bytee.communityservice.ui.form.OrphangeForm"
         android:label="fragment_orphange_form"
         tools:layout="@layout/fragment_orphange_form" />
+    <fragment
+        android:id="@+id/shareMealForm"
+        android:name="com.bytee.communityservice.ui.form.ShareMealForm"
+        android:label="fragment_share_meal_form"
+        tools:layout="@layout/fragment_share_meal_form" />
 
 
 </navigation>
