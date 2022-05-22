@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.DashBoardScreenBinding
 import com.bytee.communityservice.module.RegistrationActivity
 import com.google.firebase.auth.FirebaseAuth

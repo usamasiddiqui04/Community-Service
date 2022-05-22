@@ -13,12 +13,20 @@
         <action
             android:id="@+id/action_form_to_bloodForm"
             app:destination="@id/bloodForm" />
+        <action
+            android:id="@+id/action_form_to_handicapForm"
+            app:destination="@id/handicapForm" />
     </fragment>
     <fragment
         android:id="@+id/bloodForm"
         android:name="com.bytee.communityservice.ui.form.BloodForm"
         android:label="fragment_blood_form"
         tools:layout="@layout/fragment_blood_form" />
+    <fragment
+        android:id="@+id/handicapForm"
+        android:name="com.bytee.communityservice.ui.form.HandicapForm"
+        android:label="fragment_handicap_form"
+        tools:layout="@layout/fragment_handicap_form" />
 
 
 </navigation>

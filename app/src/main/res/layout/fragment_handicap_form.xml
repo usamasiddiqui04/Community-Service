@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="Blood Donor"
+            android:text="Handicap Drive"
             android:fontFamily="@font/poppins_bold"
             android:textColor="@color/app_blue"
             android:textSize="24sp"/>
@@ -102,11 +102,11 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/hospitalNameTextInputLayout"
+            android:id="@+id/ngoNameTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Hospital Name"
+            android:hint="NGO Name"
             android:textColorHint="@color/grey"
             app:boxStrokeColor="@color/app_blue"
             app:helperTextTextColor="@color/red"
@@ -116,7 +116,7 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/hospitalNameEditText"
+                android:id="@+id/ngoNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -130,47 +130,21 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/bloodGroupTextInputLayout"
+            android:id="@+id/addressTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Blood Group"
+            android:hint="Address"
             android:textColorHint="@color/grey"
             app:boxStrokeColor="@color/app_blue"
             app:helperTextTextColor="@color/red"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hospitalNameTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/ngoNameTextInputLayout"
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/bloodGroupEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:inputType="textPassword"
-                android:paddingTop="20dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/patientNameTextInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="Patient Name"
-            android:textColorHint="@color/grey"
-            app:boxStrokeColor="@color/app_blue"
-            app:helperTextTextColor="@color/red"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bloodGroupTextInputLayout"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/patientNameEditText"
+                android:id="@+id/addressNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -194,7 +168,7 @@
             app:helperTextTextColor="@color/red"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/patientNameTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/addressTextInputLayout"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -237,7 +211,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-
         <Button
             android:id="@+id/uploadButton"
             android:layout_width="match_parent"
@@ -246,8 +219,8 @@
             android:background="@drawable/button_background"
             android:layout_marginTop="20dp"
             android:text="Upload data"
-            android:padding="5dp"
             android:textColor="@color/white"
+            android:padding="5dp"
             android:textAllCaps="true"
             android:fontFamily="@font/poppins_medium"/>
 

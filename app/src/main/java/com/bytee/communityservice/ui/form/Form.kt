@@ -29,6 +29,8 @@ class Form : Fragment() {
 
         if(prefs.type.equals("Blood")){
             findNavController().navigate(R.id.action_form_to_bloodForm)
+        }else if (prefs.type.equals("Handicap")){
+            findNavController().navigate(R.id.action_form_to_handicapForm)
         }
     }
 

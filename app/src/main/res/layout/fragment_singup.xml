@@ -235,6 +235,7 @@
             android:background="@drawable/button_background"
             android:layout_marginTop="30dp"
             android:text="Register"
+            android:textColor="@color/white"
             android:padding="5dp"
             android:textAllCaps="true"
             android:fontFamily="@font/poppins_medium"/>
@@ -259,6 +260,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="Login"
+
             android:fontFamily="@font/poppins_semibold"
             android:textColor="@color/app_blue"/>
 
