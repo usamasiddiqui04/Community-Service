@@ -68,7 +68,7 @@
                         android:id="@+id/iv_plantation_drive"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:src="@drawable/edrive" />
+                        android:src="@drawable/plantation" />
 
                     <TextView
                         android:id="@+id/tv_plantation_drive"
@@ -109,7 +109,7 @@
                         android:id="@+id/iv_cleanness_drive"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:src="@drawable/edrive" />
+                        android:src="@drawable/cleanliness" />
 
                     <TextView
                         android:id="@+id/tv_cleanness_drive"

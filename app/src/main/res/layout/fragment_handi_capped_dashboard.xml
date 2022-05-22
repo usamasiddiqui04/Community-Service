@@ -68,7 +68,7 @@
                         android:id="@+id/iv_locate_wheel_chair"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:src="@drawable/handicap" />
+                        android:src="@drawable/wheelchair" />
 
                     <TextView
                         android:id="@+id/tv_locate_wheel_chair"
@@ -109,7 +109,7 @@
                         android:id="@+id/iv_join_event"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:src="@drawable/handicap" />
+                        android:src="@drawable/handicapped_event" />
 
                     <TextView
                         android:id="@+id/tv_join_event"
@@ -118,7 +118,7 @@
                         android:layout_below="@+id/iv_join_event"
                         android:fontFamily="@font/poppins_regular"
                         android:gravity="center"
-                        android:text="Share a meal"
+                        android:text="Join Handy Capped Event"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
 

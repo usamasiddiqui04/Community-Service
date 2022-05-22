@@ -68,7 +68,7 @@
                         android:id="@+id/iv_donate_blood"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:src="@drawable/donateblood" />
+                        android:src="@drawable/blood_campaign" />
 
                     <TextView
                         android:id="@+id/tv_donate_blood"
@@ -109,7 +109,7 @@
                         android:id="@+id/iv_blood_campaign"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:src="@drawable/donateblood" />
+                        android:src="@drawable/blood_drive" />
 
                     <TextView
                         android:id="@+id/tv_blood_campaign"

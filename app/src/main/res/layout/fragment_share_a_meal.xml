@@ -68,7 +68,7 @@
                         android:id="@+id/iv_available_rest"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:src="@drawable/smeal" />
+                        android:src="@drawable/restaurant" />
 
                     <TextView
                         android:id="@+id/tv_available_rest"
@@ -109,7 +109,7 @@
                         android:id="@+id/iv_food_drive"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:src="@drawable/smeal" />
+                        android:src="@drawable/food_drive" />
 
                     <TextView
                         android:id="@+id/tv_food_drive"
