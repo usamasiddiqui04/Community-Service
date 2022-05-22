@@ -258,8 +258,9 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="top"
                 android:gravity="top"
+                android:maxLines="5"
                 android:layout_marginBottom="10dp"
-                android:inputType="textPersonName"
+                android:inputType="textMultiLine"
                 android:paddingTop="20dp"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"/>

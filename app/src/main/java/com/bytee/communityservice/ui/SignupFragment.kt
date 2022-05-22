@@ -182,6 +182,27 @@ class SignupFragment : Fragment() {
             binding.passwordTextInputLayout.helperText = ""
         }
 
+        if(password.isNotEmpty()){
+            if(!isValidPassword(password)){
+                binding.passwordTextInputLayout.helperText =
+                    "password should contain special character number and alphabets"
+                boolean = false
+            }else{
+                binding.passwordTextInputLayout.helperText = ""
+            }
+        }
+
+
+        if(confirmPassword.isNotEmpty()){
+            if(!isValidPassword(confirmPassword)){
+                binding.confirmPasswordTextInputLayout.helperText =
+                    "password should contain special character number and alphabets"
+                boolean = false
+            }else{
+                binding.confirmPasswordTextInputLayout.helperText = ""
+            }
+        }
+
         if (confirmPassword.isEmpty()) {
             binding.confirmPasswordTextInputLayout.helperText = "this is a required filed"
             boolean = false
@@ -222,6 +243,15 @@ class SignupFragment : Fragment() {
                 "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
                 ")+"
     )
+
+    private fun isValidPassword(password: String?) : Boolean {
+        password?.let {
+            val passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$"
+            val passwordMatcher = Regex(passwordPattern)
+
+            return passwordMatcher.find(password) != null
+        } ?: return false
+    }
 
     private fun firebaseLogin() {
         binding.progressBar.visibility = View.VISIBLE

@@ -115,6 +115,7 @@ class BloodForm : Fragment() {
                         binding.patientNameEditText.text?.clear()
                         binding.latNameEditText.text?.clear()
                         binding.longNameEditText.text?.clear()
+                        binding.desNameEditText.text?.clear()
                     }
                 }
 

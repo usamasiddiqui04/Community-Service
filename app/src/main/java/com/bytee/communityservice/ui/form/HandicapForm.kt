@@ -113,6 +113,7 @@ class HandicapForm : Fragment() {
                         binding.addressNameEditText.text?.clear()
                         binding.longNameEditText.text?.clear()
                         binding.latNameEditText.text?.clear()
+                        binding.desNameEditText.text?.clear()
                     }
                 }
 

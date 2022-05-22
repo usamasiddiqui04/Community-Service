@@ -106,6 +106,7 @@ class OrphangeForm : Fragment() {
                         binding.emailEditText.text?.clear()
                         binding.orphanNameEditText.text?.clear()
                         binding.addressNameEditText.text?.clear()
+                        binding.desNameEditText.text?.clear()
                     }
                 }
 
