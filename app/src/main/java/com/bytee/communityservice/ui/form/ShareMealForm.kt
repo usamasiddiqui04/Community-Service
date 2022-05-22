@@ -91,7 +91,7 @@ class ShareMealForm : Fragment() {
 
 
             if (managerName.isNotEmpty() || email.isNotEmpty() || restaurantName.isNotEmpty() || address.isNotEmpty() ||
-                latitude.isNotEmpty() || longitude.isNotEmpty() ||description.isNotEmpty()
+                latitude.isNotEmpty() || longitude.isNotEmpty() || description.isNotEmpty()
             ) {
                 uploadData()
             }
