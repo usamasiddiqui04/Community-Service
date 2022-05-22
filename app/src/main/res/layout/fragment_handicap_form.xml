@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/wc"
-            android:text="Please enter the blood details below"
+            android:text="Please enter the handicap details below"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/app_blue"
             android:textSize="16sp"/>
@@ -211,11 +211,42 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/desTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:hint="Description"
+            android:textColorHint="@color/grey"
+            app:boxStrokeColor="@color/app_blue"
+            android:textAlignment="textStart"
+            app:helperTextTextColor="@color/red"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/longTextInputLayout"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/desNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:inputType="textPersonName"
+                android:paddingTop="20dp"
+                android:layout_gravity="top"
+                android:gravity="top"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
         <Button
             android:id="@+id/uploadButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/longTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/desTextInputLayout"
             android:background="@drawable/button_background"
             android:layout_marginTop="20dp"
             android:text="Upload data"

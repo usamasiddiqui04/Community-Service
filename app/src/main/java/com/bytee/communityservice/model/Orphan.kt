@@ -1,12 +1,10 @@
 package com.bytee.communityservice.model
 
-data class Handicap(
-    val ngoName : String,
+data class Orphan(
     val managerName : String,
+    val orphanName : String,
     val email : String,
     val address : String,
-    val lat : String,
-    val long : String,
-    val time : String,
+    val date : String,
     val description : String
 )

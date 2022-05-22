@@ -32,6 +32,7 @@ class HandicapForm : Fragment() {
     lateinit var address: String
     lateinit var latitude: String
     lateinit var longitude: String
+    lateinit var description: String
 
     lateinit var handicap: Handicap
 
@@ -59,7 +60,7 @@ class HandicapForm : Fragment() {
 
         binding.logout.setOnClickListener {
             auth.signOut()
-            startActivity(Intent(requireContext() , RegistrationActivity::class.java ))
+            startActivity(Intent(requireContext(), RegistrationActivity::class.java))
             activity?.finish()
         }
 
@@ -72,17 +73,24 @@ class HandicapForm : Fragment() {
             address = binding.addressNameEditText.text.toString()
             latitude = binding.latNameEditText.text.toString()
             longitude = binding.longNameEditText.text.toString()
+            description = binding.desNameEditText.text.toString()
 
 
 
             handicap = Handicap(
-                ngoName = ngoName, managerName = managerName, email = email,
-                address = address, lat = latitude, long = longitude , time = timeStamp
+                ngoName = ngoName,
+                managerName = managerName,
+                email = email,
+                address = address,
+                lat = latitude,
+                long = longitude,
+                time = timeStamp,
+                description = description
             )
 
 
             if (managerName.isNotEmpty() || email.isNotEmpty() || ngoName.isNotEmpty() || address.isNotEmpty() ||
-                latitude.isNotEmpty() || longitude.isNotEmpty()
+                latitude.isNotEmpty() || longitude.isNotEmpty() ||description.isNotEmpty()
             ) {
                 uploadData()
             }

@@ -114,8 +114,8 @@ class SignupFragment : Fragment() {
         }
     }
 
-    fun isLetters(string: String): Boolean {
-        return string.filter { it in 'A'..'Z' || it in 'a'..'z' }.length == string.length
+    private fun isLetters(string: String): Boolean {
+        return string.filter { it in 'A'..'Z' || it in 'a'..'z'|| it in " " }.length == string.length
     }
 
     private fun checkValidation(): Boolean {

@@ -7,5 +7,6 @@ data class BloodDonor(
     val bloodGroup : String,
     val patientName : String,
     val latitude : String,
-    val longitude : String
+    val longitude : String,
+    val description : String
 )

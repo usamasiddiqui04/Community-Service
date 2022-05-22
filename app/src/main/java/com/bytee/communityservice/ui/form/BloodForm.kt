@@ -33,6 +33,9 @@ class BloodForm : Fragment() {
     lateinit var latitude: String
     lateinit var longitude: String
     lateinit var bloodDonor: BloodDonor
+    lateinit var description: String
+
+
 
 
     override fun onCreateView(
@@ -69,6 +72,7 @@ class BloodForm : Fragment() {
             patientName = binding.patientNameEditText.text.toString()
             latitude = binding.latNameEditText.text.toString()
             longitude = binding.longNameEditText.text.toString()
+            description = binding.desNameEditText.text.toString()
 
 
             bloodDonor = BloodDonor(
@@ -78,12 +82,13 @@ class BloodForm : Fragment() {
                 bloodGroup,
                 patientName,
                 latitude,
-                longitude
+                longitude,
+                description
             )
 
             if (managerName.isNotEmpty() || email.isNotEmpty() || hospitalName.isNotEmpty() ||
                 bloodGroup.isNotEmpty() || patientName.isNotEmpty() || latitude.isNotEmpty() ||
-                longitude.isNotEmpty()
+                longitude.isNotEmpty() || description.isNotEmpty()
             ) {
 
                 uploadData()
