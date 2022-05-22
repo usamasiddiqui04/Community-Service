@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent">
+
+    <FrameLayout
+        android:id="@+id/fl_image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/images__1_">
+
+        <ImageView
+            android:id="@+id/iv_back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_margin="20dp"
+            android:background="@drawable/black_80_rounded"
+            android:padding="8dp"
+            android:src="@drawable/outline_arrow_back_white_24" />
+
+        <TextView
+            android:id="@id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/black_80"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="top|start"
+            android:maxLines="2"
+            android:padding="25dp"
+            android:text="Title Here"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
+
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fl_image"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/top_rounded_card">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:id="@+id/tv_direction"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="25"
+                        android:background="@drawable/color_accent_border_rounded"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Maps"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        app:drawableTint="@color/colorAccent"
+                        app:drawableTopCompat="@drawable/outline_map_white_24" />
+
+                    <TextView
+                        android:id="@+id/tv_call"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="25"
+                        android:background="@drawable/color_accent_border_rounded"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Call"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        app:drawableTint="@color/colorAccent"
+                        app:drawableTopCompat="@drawable/outline_call_white_24" />
+
+                    <TextView
+                        android:id="@+id/tv_whatsapp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="25"
+                        android:background="@drawable/color_accent_border_rounded"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Chat"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        app:drawableTint="@color/colorAccent"
+                        app:drawableTopCompat="@drawable/outline_whatsapp_white_24" />
+
+                    <TextView
+                        android:id="@+id/tv_direction1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="25"
+                        android:background="@drawable/color_accent_border_rounded"
+                        android:drawableTop="@drawable/outline_arrow_back_white_24"
+                        android:drawableTint="@color/colorAccent"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Directions
+"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/color_accent_border_rounded"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="Date and Time"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="12/12/2022 10:00pm"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/color_accent_border_rounded"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="Address"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Description ajshdj haskh dkhasdh hasjkdas jkd hasd asdasdas d asd as da sdas das d asd as das d"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/color_accent_border_rounded"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="Description"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Description ajshdj haskh dkhasdh hasjkdas jkd hasd asdasdas d asd as da sdas das d asd as das d"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

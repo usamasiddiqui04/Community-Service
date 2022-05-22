@@ -3,24 +3,38 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/black_80_rounded.xml" value="0.203" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/color_accent_border_rounded.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/button_background.xml" value="0.125" />
         <entry key="app/src/main/res/drawable/dashboardback.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/spinnerback.xml" value="0.1675" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/top_rounded_card.xml" value="0.203" />
         <entry key="app/src/main/res/layout/activity_dash_board.xml" value="0.2776268115942029" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/activity_form.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/activity_form.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_assists_orphan_detail.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/dash_board_screen.xml" value="0.25" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_available_wheel_chair_detail.xml" value="0.20948410630536737" />
         <entry key="app/src/main/res/layout/fragment_blood_form.xml" value="0.2776268115942029" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_blood_campaign_detail.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/fragment_environmental_form.xml" value="0.2776268115942029" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_cleanliness_drive.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_cleanliness_drive_detail.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_free_food_restaurant_list.xml" value="0.2776268115942029" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_donate_blood_detail.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/fragment_handi_cap_form.xml" value="0.2776268115942029" />
-        <entry key="app/src/main/res/layout/fragment_handi_capped_dashboard.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_handi_capped_dashboard.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_free_food_detail.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_handicap_form.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_login_screen.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_orphange_form.xml" value="0.2776268115942029" />
-        <entry key="app/src/main/res/layout/fragment_share_a_meal.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_share_a_meal.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_join_free_food_details.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_join_handy_capped_detail.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_share_meal_form.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_singup.xml" value="0.2776268115942029" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_plantation_drive_detail.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/fragment_splah_screen.xml" value="0.12409420289855072" />
         <entry key="app/src/main/res/layout/list_item_generic.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/progressdialog.xml" value="0.2776268115942029" />

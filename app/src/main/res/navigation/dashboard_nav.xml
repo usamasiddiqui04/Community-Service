@@ -127,5 +127,89 @@
             android:id="@+id/action_joinFoodDriveListFragment_to_shareAMealFragment"
             app:destination="@id/shareAMealFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/plantationDriveDetailFragment"
+        android:name="com.bytee.communityservice.PlantationDriveDetailFragment"
+        android:label="fragment_plantation_drive_detail"
+        tools:layout="@layout/fragment_plantation_drive_detail" >
+        <action
+            android:id="@+id/action_plantationDriveDetailFragment_to_plantationDriveListFragment"
+            app:destination="@id/plantationDriveListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cleanlinessDriveFragment"
+        android:name="com.bytee.communityservice.CleanlinessDriveDetailFragment"
+        android:label="fragment_cleanliness_drive"
+        tools:layout="@layout/fragment_cleanliness_drive_detail" >
+        <action
+            android:id="@+id/action_cleanlinessDriveFragment_to_cleanlinessDriveListFragment"
+            app:destination="@id/cleanlinessDriveListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/freeFoodDetailFragment"
+        android:name="com.bytee.communityservice.FreeFoodDetailFragment"
+        android:label="fragment_free_food_detail"
+        tools:layout="@layout/fragment_free_food_detail" >
+        <action
+            android:id="@+id/action_freeFoodDetailFragment_to_freeFoodRestaurantListFragment"
+            app:destination="@id/freeFoodRestaurantListFragment" />
+        <action
+            android:id="@+id/action_freeFoodDetailFragment_to_freeFoodRestaurantListFragment2"
+            app:destination="@id/freeFoodRestaurantListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/joinFreeFoodDetailsFragment"
+        android:name="com.bytee.communityservice.JoinFreeFoodDetailsFragment"
+        android:label="fragment_join_free_food_details"
+        tools:layout="@layout/fragment_join_free_food_details" >
+        <action
+            android:id="@+id/action_joinFreeFoodDetailsFragment_to_joinFoodDriveListFragment"
+            app:destination="@id/joinFoodDriveListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/assistsOrphanDetailFragment"
+        android:name="com.bytee.communityservice.AssistsOrphanDetailFragment"
+        android:label="fragment_assists_orphan_detail"
+        tools:layout="@layout/fragment_assists_orphan_detail" >
+        <action
+            android:id="@+id/action_assistsOrphanDetailFragment_to_assistsOrphanListFragment"
+            app:destination="@id/assistsOrphanListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/donateBloodDetailFragment"
+        android:name="com.bytee.communityservice.DonateBloodDetailFragment"
+        android:label="fragment_donate_blood_detail"
+        tools:layout="@layout/fragment_donate_blood_detail" >
+        <action
+            android:id="@+id/action_donateBloodDetailFragment_to_donateBloodListFragment"
+            app:destination="@id/donateBloodListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bloodCampaignDetailFragment"
+        android:name="com.bytee.communityservice.BloodCampaignDetailFragment"
+        android:label="fragment_blood_campaign_detail"
+        tools:layout="@layout/fragment_blood_campaign_detail" >
+        <action
+            android:id="@+id/action_bloodCampaignDetailFragment_to_joinCampaignListFragment"
+            app:destination="@id/joinCampaignListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/availableWheelChairDetailFragment"
+        android:name="com.bytee.communityservice.AvailableWheelChairDetailFragment"
+        android:label="fragment_available_wheel_chair_detail"
+        tools:layout="@layout/fragment_available_wheel_chair_detail" >
+        <action
+            android:id="@+id/action_availableWheelChairDetailFragment_to_availableWheelChairListFragment"
+            app:destination="@id/availableWheelChairListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/joinHandyCappedDetailFragment"
+        android:name="com.bytee.communityservice.JoinHandyCappedDetailFragment"
+        android:label="fragment_join_handy_capped_detail"
+        tools:layout="@layout/fragment_join_handy_capped_detail" >
+        <action
+            android:id="@+id/action_joinHandyCappedDetailFragment_to_joinHandyCappedEventListFragment"
+            app:destination="@id/joinHandyCappedEventListFragment" />
+    </fragment>
 
 </navigation>
