@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.FragmentBloodDonationDashboardBinding
 import com.bytee.communityservice.databinding.FragmentShareAMealBinding
 
@@ -27,6 +28,10 @@ class ShareAMealFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.ivBackArrow.setOnClickListener {
             findNavController().popBackStack()
+        }
+
+        binding.ivFoodDrive.setOnClickListener {
+            findNavController().navigate(R.id.joinFoodDriveListFragment)
         }
 
     }

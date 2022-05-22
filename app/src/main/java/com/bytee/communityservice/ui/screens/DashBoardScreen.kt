@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.R
@@ -13,6 +14,7 @@ import com.bytee.communityservice.databinding.DashBoardScreenBinding
 import com.bytee.communityservice.model.BloodDonor
 import com.bytee.communityservice.model.Handicap
 import com.bytee.communityservice.module.RegistrationActivity
+import com.bytee.communityservice.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -26,6 +28,7 @@ class DashBoardScreen : Fragment() {
     lateinit var databaseReference: DatabaseReference
     lateinit var auth: FirebaseAuth
     val list = arrayListOf<Handicap>()
+    lateinit var prefs: Prefs
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,10 +44,11 @@ class DashBoardScreen : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
+        prefs = Prefs(requireContext())
         // below line is used to get reference for our database.
 //        databaseReference = firebaseDatabase.reference.child("Blood")
 
-        getList()
+//        getList()
 
         binding.logout.setOnClickListener {
             auth.signOut()
@@ -55,6 +59,9 @@ class DashBoardScreen : Fragment() {
         Log.d("TAG", "onViewCreated: ${list.size}")
 
 
+
+        binding.userName.text = prefs.name
+        binding.userEmail.text = prefs.email
 
         binding.cvAssistHandycapped.setOnClickListener {
             findNavController().navigate(R.id.handiCappedDashboardFragment)
@@ -73,90 +80,4 @@ class DashBoardScreen : Fragment() {
         }
 
     }
-
-    fun getList() {
-//        databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//
-//                for (child in snapshot.children) {
-//
-//                    databaseReference.child(child.key!!)
-//                        .addListenerForSingleValueEvent(object : ValueEventListener {
-//                            override fun onDataChange(snapshot: DataSnapshot) {
-//                                val bloodGroup = snapshot.child("bloodGroup").value.toString()
-//                                val email = snapshot.child("email").value.toString()
-//                                val hospitalName = snapshot.child("hospitalName").value.toString()
-//                                val managerName = snapshot.child("managerName").value.toString()
-//                                val latitude = snapshot.child("latitude").value.toString()
-//                                val longitude = snapshot.child("longitude").value.toString()
-//                                val patientName = snapshot.child("patientName").value.toString()
-//
-//
-//                                val bloodDonor = BloodDonor(
-//                                    managerName = managerName,
-//                                    email = email,
-//                                    hospitalName = hospitalName,
-//                                    bloodGroup = bloodGroup,
-//                                    patientName = patientName,
-//                                    latitude = latitude,
-//                                    longitude = longitude,
-//                                    description = "sads"
-//                                )
-//                                list.add(bloodDonor)
-//
-//                            }
-//
-//                            override fun onCancelled(error: DatabaseError) {
-//                            }
-//
-//                        })
-//
-//                }
-//
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                Toast.makeText(
-//                    requireContext(),
-//                    "$error",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//            }
-//        })
-
-        val ref = FirebaseDatabase.getInstance().reference.child("Handicap Drive")
-        ref.addListenerForSingleValueEvent(
-            object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    //Get map of users in datasnapshot
-//                    for (postSnapshot in dataSnapshot.children) {
-//                        val user: Handicap? = postSnapshot.getValue(Handicap::class.java)
-//                        list.add(user!!);
-//                    }
-
-
-                    Log.d("", "")
-//                    collectPhoneNumbers(dataSnapshot.value as Map<String?, Any?>?)
-                }
-
-                override fun onCancelled(databaseError: DatabaseError) {
-                    //handle databaseError
-                }
-            })
-    }
-
-//    private fun collectBloodItems(bloodList: Map<String, Any>) {
-//        val phoneNumbers: ArrayList<Long?> = ArrayList()
-//
-//        //iterate through each user, ignoring their UID
-//        for ((_, value): Map.Entry<String, Any> in bloodList) {
-//
-//            //Get user map
-//            val singleUser = value as Map<*, *>
-//            //Get phone field and append to list
-//            phoneNumbers.add(singleUser["phone"] as Long?)
-//        }
-//        System.out.println(phoneNumbers.toString())
-//    }
-
 }

@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bytee.communityservice.R
+import com.bytee.communityservice.model.BloodDonor
+import com.bytee.communityservice.model.Handicap
 
-class CustomAdapter(private val title: ArrayList<String>) :
-    RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class BloodDonateAdapter(private val title: ArrayList<BloodDonor>) :
+    RecyclerView.Adapter<BloodDonateAdapter.ViewHolder>() {
 
     /**
      * Provide a reference to the type of views that you are using
@@ -40,7 +42,7 @@ class CustomAdapter(private val title: ArrayList<String>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.textView.text = title[position]
+        viewHolder.textView.text = title[position].bloodGroup
     }
 
     // Return the size of your dataset (invoked by the layout manager)
