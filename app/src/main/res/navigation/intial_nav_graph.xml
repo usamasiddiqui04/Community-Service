@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splahScreen"
-        android:name="com.bytee.communityservice.ui.SplashScreen"
+        android:name="com.bytee.communityservice.ui.screens.SplashScreen"
         android:label="fragment_splah_screen"
         tools:layout="@layout/fragment_splah_screen">
 
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginScreen"
-        android:name="com.bytee.communityservice.ui.LoginScreen"
+        android:name="com.bytee.communityservice.ui.screens.LoginScreen"
         android:label="fragment_login_screen"
         tools:layout="@layout/fragment_login_screen">
 
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/singupFragment2"
-        android:name="com.bytee.communityservice.ui.SignupFragment"
+        android:name="com.bytee.communityservice.ui.screens.SignupFragment"
         android:label="fragment_singup"
         tools:layout="@layout/fragment_singup" />
 

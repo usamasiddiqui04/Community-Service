@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/dashBoardScreen"
-        android:name="com.bytee.communityservice.ui.DashBoardScreen"
+        android:name="com.bytee.communityservice.ui.screens.DashBoardScreen"
         android:label="dash_board_screen"
         tools:layout="@layout/dash_board_screen" />
     <fragment
         android:id="@+id/handiCappedDashboardFragment"
-        android:name="com.bytee.communityservice.HandiCappedDashboardFragment"
+        android:name="com.bytee.communityservice.ui.screens.HandiCappedDashboardFragment"
         android:label="fragment_handi_capped_dashboard"
         tools:layout="@layout/fragment_handi_capped_dashboard" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/environmentalDriveDashboardFragment"
-        android:name="com.bytee.communityservice.EnvironmentalDriveDashboardFragment"
+        android:name="com.bytee.communityservice.ui.screens.EnvironmentalDriveDashboardFragment"
         android:label="fragment_environmental_drive_dashboard"
         tools:layout="@layout/fragment_environmental_drive_dashboard" >
         <action
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/bloodDonationDashboardFragment"
-        android:name="com.bytee.communityservice.BloodDonationDashboardFragment"
+        android:name="com.bytee.communityservice.ui.screens.BloodDonationDashboardFragment"
         android:label="fragment_blood_donation_dashboard"
         tools:layout="@layout/fragment_blood_donation_dashboard" >
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/shareAMealFragment"
-        android:name="com.bytee.communityservice.ShareAMealFragment"
+        android:name="com.bytee.communityservice.ui.screens.ShareAMealFragment"
         android:label="fragment_share_a_meal"
         tools:layout="@layout/fragment_share_a_meal" >
         <action
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/availableWheelChairListFragment"
-        android:name="com.bytee.communityservice.AvailableWheelChairListFragment"
+        android:name="com.bytee.communityservice.ui.screens.AvailableWheelChairListFragment"
         android:label="fragment_available_wheel_chair_list"
         tools:layout="@layout/fragment_available_wheel_chair_list" >
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/donateBloodListFragment"
-        android:name="com.bytee.communityservice.DonateBloodListFragment"
+        android:name="com.bytee.communityservice.ui.screens.DonateBloodListFragment"
         android:label="fragment_donate_blood_list"
         tools:layout="@layout/fragment_donate_blood_list" >
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/joinCampaignListFragment"
-        android:name="com.bytee.communityservice.JoinCampaignListFragment"
+        android:name="com.bytee.communityservice.ui.screens.JoinCampaignListFragment"
         android:label="fragment_join_campaign_list"
         tools:layout="@layout/fragment_join_blood_campaign_list" >
         <action
@@ -75,7 +75,7 @@
     </fragment>
     <fragment
         android:id="@+id/assistsOrphanListFragment"
-        android:name="com.bytee.communityservice.AssistsOrphanListFragment"
+        android:name="com.bytee.communityservice.ui.screens.AssistsOrphanListFragment"
         android:label="fragment_assists_orphan_list"
         tools:layout="@layout/fragment_assists_orphan_list" >
         <action
@@ -84,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/joinHandyCappedEventListFragment"
-        android:name="com.bytee.communityservice.JoinHandyCappedEventListFragment"
+        android:name="com.bytee.communityservice.ui.screens.JoinHandyCappedEventListFragment"
         android:label="fragment_join_handy_capped_event_list"
         tools:layout="@layout/fragment_join_handy_capped_event_list" >
         <action
@@ -93,7 +93,7 @@
     </fragment>
     <fragment
         android:id="@+id/plantationDriveListFragment"
-        android:name="com.bytee.communityservice.PlantationDriveListFragment"
+        android:name="com.bytee.communityservice.ui.screens.PlantationDriveListFragment"
         android:label="fragment_plantation_drive_list"
         tools:layout="@layout/fragment_plantation_drive_list" >
         <action
@@ -102,7 +102,7 @@
     </fragment>
     <fragment
         android:id="@+id/cleanlinessDriveListFragment"
-        android:name="com.bytee.communityservice.CleanlinessDriveListFragment"
+        android:name="com.bytee.communityservice.ui.screens.CleanlinessDriveListFragment"
         android:label="fragment_cleanliness_drive_list"
         tools:layout="@layout/fragment_cleanliness_drive_list" >
         <action
@@ -111,7 +111,7 @@
     </fragment>
     <fragment
         android:id="@+id/freeFoodRestaurantListFragment"
-        android:name="com.bytee.communityservice.FreeFoodRestaurantListFragment"
+        android:name="com.bytee.communityservice.ui.screens.FreeFoodRestaurantListFragment"
         android:label="fragment_free_food_restaurant_list"
         tools:layout="@layout/fragment_free_food_restaurant_list" >
         <action
@@ -120,7 +120,7 @@
     </fragment>
     <fragment
         android:id="@+id/joinFoodDriveListFragment"
-        android:name="com.bytee.communityservice.JoinFoodDriveListFragment"
+        android:name="com.bytee.communityservice.ui.screens.JoinFoodDriveListFragment"
         android:label="fragment_join_food_drive_list"
         tools:layout="@layout/fragment_join_food_drive_list" >
         <action

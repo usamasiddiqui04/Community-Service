@@ -1,4 +1,4 @@
-package com.bytee.communityservice.ui
+package com.bytee.communityservice.ui.screens
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.R

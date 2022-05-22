@@ -1,4 +1,4 @@
-package com.bytee.communityservice
+package com.bytee.communityservice.ui.screens
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,20 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.databinding.FragmentBloodDonationDashboardBinding
-import com.bytee.communityservice.databinding.FragmentEnvironmentalDriveDashboardBinding
+import com.bytee.communityservice.databinding.FragmentShareAMealBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [EnvironmentalDriveDashboardFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class EnvironmentalDriveDashboardFragment : Fragment() {
-    lateinit var _binding: FragmentEnvironmentalDriveDashboardBinding
+class ShareAMealFragment : Fragment() {
+    lateinit var _binding: FragmentShareAMealBinding
     private val binding get() = _binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +20,7 @@ class EnvironmentalDriveDashboardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentEnvironmentalDriveDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentShareAMealBinding.inflate(inflater, container, false)
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

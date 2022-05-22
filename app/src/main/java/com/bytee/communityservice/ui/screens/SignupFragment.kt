@@ -1,4 +1,4 @@
-package com.bytee.communityservice.ui
+package com.bytee.communityservice.ui.screens
 
 import android.R
 import android.app.AlertDialog

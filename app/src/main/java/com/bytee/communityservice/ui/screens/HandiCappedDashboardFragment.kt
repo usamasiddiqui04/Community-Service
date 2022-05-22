@@ -1,4 +1,4 @@
-package com.bytee.communityservice
+package com.bytee.communityservice.ui.screens
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

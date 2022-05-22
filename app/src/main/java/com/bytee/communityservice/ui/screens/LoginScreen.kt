@@ -1,7 +1,5 @@
-package com.bytee.communityservice.ui
+package com.bytee.communityservice.ui.screens
 
-import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod

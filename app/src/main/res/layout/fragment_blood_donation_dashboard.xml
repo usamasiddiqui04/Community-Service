@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/app_blue"
     android:padding="16dp"
-    tools:context=".HandiCappedDashboardFragment">
+    tools:context=".ui.screens.HandiCappedDashboardFragment">
 
     <ImageView
         android:id="@+id/iv_back_arrow"
