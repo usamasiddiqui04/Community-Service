@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_form_to_shareMealForm"
             app:destination="@id/shareMealForm" />
+        <action
+            android:id="@+id/action_form_to_environmentalForm"
+            app:destination="@id/environmentalForm" />
     </fragment>
     <fragment
         android:id="@+id/bloodForm"
@@ -43,6 +46,11 @@
         android:name="com.bytee.communityservice.ui.form.ShareMealForm"
         android:label="fragment_share_meal_form"
         tools:layout="@layout/fragment_share_meal_form" />
+    <fragment
+        android:id="@+id/environmentalForm"
+        android:name="com.bytee.communityservice.ui.form.EnvironmentalForm"
+        android:label="fragment_environmental_form"
+        tools:layout="@layout/fragment_environmental_form" />
 
 
 </navigation>

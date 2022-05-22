@@ -1,16 +1,19 @@
 package com.bytee.communityservice.ui.form
 
-import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.os.Environment
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TimePicker
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import com.bytee.communityservice.R
+import com.bytee.communityservice.databinding.FragmentEnvironmentalFormBinding
 import com.bytee.communityservice.databinding.FragmentHandicapFormBinding
+import com.bytee.communityservice.databinding.FragmentSingupBinding
+import com.bytee.communityservice.model.Environmental
 import com.bytee.communityservice.model.Handicap
 import com.bytee.communityservice.module.RegistrationActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -18,24 +21,23 @@ import com.google.firebase.database.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class HandicapForm : Fragment() {
+class EnvironmentalForm : Fragment() {
 
 
-    lateinit var _binding: FragmentHandicapFormBinding
+    lateinit var _binding: FragmentEnvironmentalFormBinding
     private val binding get() = _binding
 
     private lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var databaseReference: DatabaseReference
     lateinit var auth: FirebaseAuth
-    lateinit var managerName: String
+    lateinit var driveName: String
     lateinit var email: String
-    lateinit var ngoName: String
     lateinit var address: String
     lateinit var latitude: String
     lateinit var longitude: String
     lateinit var description: String
 
-    lateinit var handicap: Handicap
+    lateinit var environment: Environmental
 
     private val timeStamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date())
 
@@ -43,8 +45,8 @@ class HandicapForm : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentHandicapFormBinding.inflate(inflater, container, false)
+    ): View {
+        _binding = FragmentEnvironmentalFormBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -55,7 +57,7 @@ class HandicapForm : Fragment() {
         firebaseDatabase = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
         // below line is used to get reference for our database.
-        databaseReference = firebaseDatabase.reference.child("Handicap Drive")
+        databaseReference = firebaseDatabase.reference.child("Environmental Drive")
 
         val callback: OnBackPressedCallback =
             object : OnBackPressedCallback(true /* enabled by default */) {
@@ -71,38 +73,34 @@ class HandicapForm : Fragment() {
             activity?.finish()
         }
 
-
         binding.uploadButton.setOnClickListener {
 
-            managerName = binding.managerNameEditText.text.toString()
+            driveName = binding.driveNameEditText.text.toString()
             email = binding.emailEditText.text.toString()
-            ngoName = binding.ngoNameEditText.text.toString()
             address = binding.addressNameEditText.text.toString()
             latitude = binding.latNameEditText.text.toString()
             longitude = binding.longNameEditText.text.toString()
             description = binding.desNameEditText.text.toString()
 
+            environment =
+                Environmental(
+                    driveName = driveName,
+                    address = address,
+                    time = timeStamp,
+                    latitude = latitude,
+                    longitude = longitude,
+                    description = description
+                )
 
 
-            handicap = Handicap(
-                ngoName = ngoName,
-                managerName = managerName,
-                email = email,
-                address = address,
-                lat = latitude,
-                long = longitude,
-                time = timeStamp,
-                description = description
-            )
-
-
-            if (managerName.isNotEmpty() || email.isNotEmpty() || ngoName.isNotEmpty() || address.isNotEmpty() ||
-                latitude.isNotEmpty() || longitude.isNotEmpty() ||description.isNotEmpty()
+            if (driveName.isNotEmpty() || email.isNotEmpty() || address.isNotEmpty() ||
+                latitude.isNotEmpty() || longitude.isNotEmpty() || description.isNotEmpty()
             ) {
                 uploadData()
             }
 
         }
+
 
     }
 
@@ -112,11 +110,10 @@ class HandicapForm : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 val key = firebaseDatabase.reference.push().key
-                databaseReference.child(key!!).setValue(handicap).addOnCompleteListener {
+                databaseReference.child(key!!).setValue(environment).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        binding.managerNameEditText.text?.clear()
+                        binding.driveNameEditText.text?.clear()
                         binding.emailEditText.text?.clear()
-                        binding.ngoNameEditText.text?.clear()
                         binding.addressNameEditText.text?.clear()
                         binding.longNameEditText.text?.clear()
                         binding.latNameEditText.text?.clear()

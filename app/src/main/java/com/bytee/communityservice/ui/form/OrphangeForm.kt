@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.FragmentHandicapFormBinding
 import com.bytee.communityservice.databinding.FragmentOrphangeFormBinding
@@ -55,7 +56,13 @@ class OrphangeForm : Fragment() {
         // below line is used to get reference for our database.
         databaseReference = firebaseDatabase.reference.child("Orphans Drive")
 
-
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    activity?.finish()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
 
         binding.logout.setOnClickListener {
             auth.signOut()

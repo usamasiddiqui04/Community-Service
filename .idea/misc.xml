@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dash_board_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_blood_form.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_environmental_form.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_free_food_restaurant_list.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_handi_cap_form.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_handi_capped_dashboard.xml" value="0.2776268115942029" />

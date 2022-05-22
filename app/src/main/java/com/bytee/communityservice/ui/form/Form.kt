@@ -35,6 +35,8 @@ class Form : Fragment() {
             findNavController().navigate(R.id.action_form_to_orphangeForm)
         }else if (prefs.type.equals("Share a meal")){
             findNavController().navigate(R.id.action_form_to_shareMealForm)
+        }else if(prefs.type.equals("Environmental")){
+            findNavController().navigate(R.id.action_form_to_environmentalForm)
         }
     }
 

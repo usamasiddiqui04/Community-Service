@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.databinding.FragmentBloodFormBinding
 import com.bytee.communityservice.model.BloodDonor
 import com.bytee.communityservice.module.RegistrationActivity
@@ -61,6 +63,14 @@ class BloodForm : Fragment() {
             startActivity(Intent(requireContext() ,RegistrationActivity::class.java ))
             activity?.finish()
         }
+
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    activity?.finish()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
 
         binding.uploadButton.setOnClickListener {
 
