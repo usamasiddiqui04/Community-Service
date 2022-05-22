@@ -143,12 +143,15 @@ class SignupFragment : Fragment() {
             binding.phoneNumberTextInputLayout.helperText = ""
         }
 
-        if(!isLetters(fullName)){
-            binding.nameTextInputLayout.helperText = "name should contain alphabets only"
-            boolean = false
-        }else{
-            binding.nameTextInputLayout.helperText = ""
+        if(fullName.isNotEmpty()){
+            if(!isLetters(fullName)){
+                binding.nameTextInputLayout.helperText = "name should contain alphabets only"
+                boolean = false
+            }else{
+                binding.nameTextInputLayout.helperText = ""
+            }
         }
+
 
         if(!checkEmail(email)){
             binding.emailTextInputLayout.helperText = "Invalid email"
