@@ -45,6 +45,7 @@
             app:helperTextTextColor="@color/red"
             android:textColorHint="@color/grey"
             app:boxStrokeColor="@color/app_blue"
+            app:boxStrokeErrorColor="@color/red"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginText"
@@ -71,6 +72,7 @@
             android:textColorHint="@color/grey"
             app:boxStrokeColor="@color/app_blue"
             app:helperTextTextColor="@color/red"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nameTextInputLayout"

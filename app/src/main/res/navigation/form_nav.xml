@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_form_to_handicapForm"
             app:destination="@id/handicapForm" />
+        <action
+            android:id="@+id/action_form_to_orphangeForm"
+            app:destination="@id/orphangeForm" />
     </fragment>
     <fragment
         android:id="@+id/bloodForm"
@@ -27,6 +30,11 @@
         android:name="com.bytee.communityservice.ui.form.HandicapForm"
         android:label="fragment_handicap_form"
         tools:layout="@layout/fragment_handicap_form" />
+    <fragment
+        android:id="@+id/orphangeForm"
+        android:name="com.bytee.communityservice.OrphangeForm"
+        android:label="fragment_orphange_form"
+        tools:layout="@layout/fragment_orphange_form" />
 
 
 </navigation>

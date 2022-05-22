@@ -32,7 +32,8 @@ class SignupFragment : Fragment() {
     lateinit var confirmPassword: String
     var validationPass = false
 
-    private var acountType = arrayOf("Normal", "Handicap", "Orphans", "Blood", "Environmental" , "Share a meal")
+    private var acountType =
+        arrayOf("Normal", "Handicap", "Orphans", "Blood", "Environmental", "Share a meal")
 
 
     override fun onCreateView(
@@ -104,75 +105,96 @@ class SignupFragment : Fragment() {
             fullName = binding.nameEditText.text.toString()
             confirmPassword = binding.confirmPassWordEditText.text.toString()
 
-
-            if (fullName.isEmpty()) {
-                binding.nameTextInputLayout.helperText = "this is a required number"
-                return@setOnClickListener
-            } else {
-                binding.nameTextInputLayout.helperText = ""
+            if (checkValidation()) {
+                firebaseLogin()
             }
 
-            if (email.isEmpty()) {
-                binding.emailTextInputLayout.helperText = "this is a required number"
-                return@setOnClickListener
-            } else {
-                binding.emailTextInputLayout.helperText = ""
-            }
 
-            if (phoneNumber.isEmpty()) {
-                binding.phoneNumberTextInputLayout.helperText = "this is a required filed"
-                return@setOnClickListener
-            } else {
-                binding.phoneNumberTextInputLayout.helperText = ""
-            }
-
-            if (phoneNumber.length < 11) {
-                binding.phoneNumberTextInputLayout.helperText = "invalid phone number"
-                return@setOnClickListener
-            } else {
-                binding.phoneNumberTextInputLayout.helperText = ""
-            }
-
-            if (password.isEmpty()) {
-                binding.passwordTextInputLayout.helperText = "this is a required filed"
-                return@setOnClickListener
-            } else {
-                binding.phoneNumberTextInputLayout.helperText = ""
-            }
-
-            if (password.length < 8) {
-                binding.passwordTextInputLayout.helperText =
-                    "password length should be greater than 8 characters"
-                return@setOnClickListener
-            } else {
-                binding.phoneNumberTextInputLayout.helperText = ""
-            }
-
-            if (confirmPassword.isEmpty()) {
-                binding.confirmPasswordTextInputLayout.helperText = "this is a required filed"
-                return@setOnClickListener
-            } else {
-                binding.confirmPasswordTextInputLayout.helperText = ""
-            }
-
-            if (confirmPassword.length < 8) {
-                binding.confirmPasswordTextInputLayout.helperText =
-                    "password length should be greater than 8 characters"
-                return@setOnClickListener
-            } else {
-                binding.confirmPasswordTextInputLayout.helperText = ""
-            }
-
-            if (!password.equals(confirmPassword)) {
-                binding.confirmPasswordTextInputLayout.helperText =
-                    "password not match please try again"
-                return@setOnClickListener
-            } else {
-                binding.confirmPasswordTextInputLayout.helperText = ""
-            }
-
-            firebaseLogin()
         }
+    }
+
+    fun isLetters(string: String): Boolean {
+        return string.filter { it in 'A'..'Z' || it in 'a'..'z' }.length == string.length
+    }
+
+    private fun checkValidation(): Boolean {
+
+        var boolean = true
+
+        if (fullName.isEmpty()) {
+            binding.nameTextInputLayout.helperText = "this is a required number"
+            boolean = false
+        } else {
+            binding.nameTextInputLayout.helperText = ""
+        }
+
+        if (email.isEmpty()) {
+            binding.emailTextInputLayout.helperText = "this is a required number"
+            boolean = false
+        } else {
+            binding.emailTextInputLayout.helperText = ""
+        }
+
+        if (phoneNumber.isEmpty()) {
+            binding.phoneNumberTextInputLayout.helperText = "this is a required filed"
+            boolean = false
+        } else {
+            binding.phoneNumberTextInputLayout.helperText = ""
+        }
+
+        if(!isLetters(fullName)){
+            binding.nameTextInputLayout.helperText = "name should contain alphabets only"
+            boolean = false
+        }else{
+            binding.nameTextInputLayout.helperText = ""
+        }
+
+        if (phoneNumber.length < 10) {
+            binding.phoneNumberTextInputLayout.helperText = "invalid phone number"
+            boolean = false
+        } else {
+            binding.phoneNumberTextInputLayout.helperText = ""
+        }
+
+        if (password.isEmpty()) {
+            binding.passwordTextInputLayout.helperText = "this is a required filed"
+            boolean = false
+        } else {
+            binding.passwordTextInputLayout.helperText = ""
+        }
+
+        if (password.length < 8) {
+            binding.passwordTextInputLayout.helperText =
+                "password length should be greater than 8 characters"
+            boolean = false
+        } else {
+            binding.passwordTextInputLayout.helperText = ""
+        }
+
+        if (confirmPassword.isEmpty()) {
+            binding.confirmPasswordTextInputLayout.helperText = "this is a required filed"
+            boolean = false
+        } else {
+            binding.confirmPasswordTextInputLayout.helperText = ""
+        }
+
+        if (confirmPassword.length < 8) {
+            binding.confirmPasswordTextInputLayout.helperText =
+                "password length should be greater than 8 characters"
+            boolean = false
+        } else {
+            binding.confirmPasswordTextInputLayout.helperText = ""
+        }
+
+        if (!password.equals(confirmPassword)) {
+            binding.confirmPasswordTextInputLayout.helperText =
+                "password not match please try again"
+            boolean = false
+        } else {
+            binding.confirmPasswordTextInputLayout.helperText = ""
+        }
+
+        return boolean
     }
 
     private fun firebaseLogin() {
