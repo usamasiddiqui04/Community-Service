@@ -1,10 +1,13 @@
 package com.bytee.communityservice.ui.screens
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.FragmentBloodDonationDashboardBinding
@@ -28,6 +31,22 @@ class ShareAMealFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.ivBackArrow.setOnClickListener {
             findNavController().popBackStack()
+        }
+
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    findNavController().popBackStack()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
+
+
+        binding.ivAvailableRest.setOnClickListener {
+            val geoUri =
+                "http://maps.google.com/maps?q=loc:" + "restaurants"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(geoUri))
+            startActivity(intent)
         }
 
         binding.ivFoodDrive.setOnClickListener {

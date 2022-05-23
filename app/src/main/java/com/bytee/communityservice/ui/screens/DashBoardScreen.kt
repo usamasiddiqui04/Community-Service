@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.R
@@ -50,6 +51,14 @@ class DashBoardScreen : Fragment() {
 
 //        getList()
 
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    findNavController().popBackStack()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
+
         binding.logout.setOnClickListener {
             auth.signOut()
             startActivity(Intent(requireContext(), RegistrationActivity::class.java))
@@ -67,7 +76,7 @@ class DashBoardScreen : Fragment() {
             findNavController().navigate(R.id.handiCappedDashboardFragment)
         }
         binding.cvAssistOrphans.setOnClickListener {
-            findNavController().navigate(R.id.handiCappedDashboardFragment)
+            findNavController().navigate(R.id.assistsOrphanListFragment)
         }
         binding.cvBloodDonation.setOnClickListener {
             findNavController().navigate(R.id.bloodDonationDashboardFragment)

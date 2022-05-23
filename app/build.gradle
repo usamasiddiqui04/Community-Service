@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id "androidx.navigation.safeargs"
+    id "org.jetbrains.kotlin.android.extensions"
 }
 android {
     compileSdk 32
@@ -34,6 +35,12 @@ android {
     buildFeatures {
         viewBinding true
         dataBinding true
+    }
+
+    android {
+        androidExtensions {
+            experimental = true
+        }
     }
 }
 

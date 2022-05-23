@@ -1,9 +1,11 @@
 package com.bytee.communityservice.adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bytee.communityservice.R
 import com.bytee.communityservice.model.Environmental
@@ -43,6 +45,18 @@ class EnvironmentalAdapter(private val title: ArrayList<Environmental>) :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.textView.text = title[position].driveName
+
+        viewHolder.textView.setOnClickListener {
+            try {
+                val bundle = Bundle()
+                bundle.putParcelable("enviro", title[position])
+                it.findNavController().navigate(R.id.action_plantationDriveListFragment_to_plantationDriveDetailFragment , bundle)
+            }catch (e : Exception){
+                val bundle = Bundle()
+                bundle.putParcelable("enviro", title[position])
+                it.findNavController().navigate(R.id.action_cleanlinessDriveListFragment_to_plantationDriveDetailFragment , bundle)
+            }
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)

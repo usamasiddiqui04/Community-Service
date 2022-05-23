@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,6 +41,14 @@ class DonateBloodListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    findNavController().popBackStack()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
+
         //adding a layoutmanager
         binding.rvMain.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
 
@@ -72,8 +81,8 @@ class DonateBloodListFragment : Fragment() {
                                 val email = snapshot.child("email").value.toString()
                                 val patientName = snapshot.child("patientName").value.toString()
                                 val managerName = snapshot.child("managerName").value.toString()
-                                val latitude = snapshot.child("lat").value.toString()
-                                val longitude = snapshot.child("long").value.toString()
+                                val latitude = snapshot.child("latitude").value.toString()
+                                val longitude = snapshot.child("longitude").value.toString()
                                 val bloodGroup = snapshot.child("bloodGroup").value.toString()
                                 val description = snapshot.child("description").value.toString()
 

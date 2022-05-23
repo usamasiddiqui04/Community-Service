@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/layout/activity_form.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dash_board_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_appointment_screen.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_assists_orphan_detail.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_assists_orphan_list.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_available_wheel_chair_list.xml" value="0.2776268115942029" />
@@ -20,18 +21,22 @@
         <entry key="app/src/main/res/layout/fragment_donate_blood_list.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_environmental_drive_dashboard.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_environmental_form.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_free_food_detail.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_free_food_restaurant_list.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_handi_cap_form.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_handi_capped_dashboard.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_handicap_form.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_join_blood_campaign_list.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_join_handy_capped_detail.xml" value="0.28306159420289856" />
         <entry key="app/src/main/res/layout/fragment_login_screen.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_orphange_form.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_plantation_drive_detail.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_plantation_drive_list.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_share_a_meal.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_share_meal_form.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_singup.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_splah_screen.xml" value="0.12409420289855072" />
+        <entry key="app/src/main/res/layout/fragment_success_screen.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/list_item_generic.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/progressdialog.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/spinnerback.xml" value="0.2776268115942029" />

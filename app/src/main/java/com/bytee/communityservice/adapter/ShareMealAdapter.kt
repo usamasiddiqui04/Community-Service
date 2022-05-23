@@ -1,9 +1,11 @@
 package com.bytee.communityservice.adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bytee.communityservice.R
 import com.bytee.communityservice.model.BloodDonor
@@ -44,6 +46,20 @@ class ShareMealAdapter(private val title: ArrayList<ShareMeal>) :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.textView.text = title[position].restaurantName
+
+        viewHolder.textView.setOnClickListener {
+            try {
+                val bundle = Bundle()
+                bundle.putParcelable("shareameal", title[position])
+                it.findNavController().navigate(R.id.action_joinFoodDriveListFragment_to_joinFreeFoodDetailsFragment , bundle)
+            }catch (e : Exception){
+                val bundle = Bundle()
+                bundle.putParcelable("shareameal", title[position])
+                it.findNavController().navigate(R.id.action_joinFoodDriveListFragment_to_joinFreeFoodDetailsFragment , bundle)
+            }
+
+        }
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)

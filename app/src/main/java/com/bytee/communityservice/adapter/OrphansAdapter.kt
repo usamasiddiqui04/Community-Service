@@ -10,9 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bytee.communityservice.R
 import com.bytee.communityservice.model.BloodDonor
 import com.bytee.communityservice.model.Handicap
+import com.bytee.communityservice.model.Orphan
 
-class BloodDonateAdapter(private val title: ArrayList<BloodDonor>) :
-    RecyclerView.Adapter<BloodDonateAdapter.ViewHolder>() {
+class OrphansAdapter(private val title: ArrayList<Orphan>) :
+    RecyclerView.Adapter<OrphansAdapter.ViewHolder>() {
 
     /**
      * Provide a reference to the type of views that you are using
@@ -44,17 +45,17 @@ class BloodDonateAdapter(private val title: ArrayList<BloodDonor>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.textView.text = title[position].bloodGroup
+        viewHolder.textView.text = title[position].managerName
 
         viewHolder.textView.setOnClickListener {
             try {
                 val bundle = Bundle()
-                bundle.putParcelable("blood", title[position])
-                it.findNavController().navigate(R.id.action_donateBloodListFragment_to_donateBloodDetailFragment , bundle)
+                bundle.putParcelable("orphan", title[position])
+                it.findNavController().navigate(R.id.action_assistsOrphanListFragment_to_assistsOrphanDetailFragment , bundle)
             }catch (e : Exception){
                 val bundle = Bundle()
-                bundle.putParcelable("blood", title[position])
-                it.findNavController().navigate(R.id.action_joinCampaignListFragment_to_donateBloodDetailFragment , bundle)
+                bundle.putParcelable("orphan", title[position])
+                it.findNavController().navigate(R.id.action_assistsOrphanListFragment_to_assistsOrphanDetailFragment , bundle)
             }
         }
     }

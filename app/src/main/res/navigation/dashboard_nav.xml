@@ -9,7 +9,11 @@
         android:id="@+id/dashBoardScreen"
         android:name="com.bytee.communityservice.ui.screens.DashBoardScreen"
         android:label="dash_board_screen"
-        tools:layout="@layout/dash_board_screen" />
+        tools:layout="@layout/dash_board_screen" >
+        <action
+            android:id="@+id/action_dashBoardScreen_to_assistsOrphanListFragment"
+            app:destination="@id/assistsOrphanListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/handiCappedDashboardFragment"
         android:name="com.bytee.communityservice.ui.screens.HandiCappedDashboardFragment"
@@ -54,6 +58,9 @@
         <action
             android:id="@+id/action_availableWheelChairListFragment_to_handiCappedDashboardFragment"
             app:destination="@id/handiCappedDashboardFragment" />
+        <action
+            android:id="@+id/action_availableWheelChairListFragment_to_joinHandyCappedDetailFragment"
+            app:destination="@id/joinHandyCappedDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/donateBloodListFragment"
@@ -63,6 +70,9 @@
         <action
             android:id="@+id/action_donateBloodListFragment_to_bloodDonationDashboardFragment"
             app:destination="@id/bloodDonationDashboardFragment" />
+        <action
+            android:id="@+id/action_donateBloodListFragment_to_donateBloodDetailFragment"
+            app:destination="@id/donateBloodDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/joinCampaignListFragment"
@@ -72,6 +82,9 @@
         <action
             android:id="@+id/action_joinCampaignListFragment_to_bloodDonationDashboardFragment"
             app:destination="@id/bloodDonationDashboardFragment" />
+        <action
+            android:id="@+id/action_joinCampaignListFragment_to_donateBloodDetailFragment"
+            app:destination="@id/donateBloodDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/assistsOrphanListFragment"
@@ -81,6 +94,9 @@
         <action
             android:id="@+id/action_assistsOrphanListFragment_to_dashBoardScreen"
             app:destination="@id/dashBoardScreen" />
+        <action
+            android:id="@+id/action_assistsOrphanListFragment_to_assistsOrphanDetailFragment"
+            app:destination="@id/assistsOrphanDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/joinHandyCappedEventListFragment"
@@ -90,6 +106,9 @@
         <action
             android:id="@+id/action_joinHandyCappedEventListFragment_to_handiCappedDashboardFragment"
             app:destination="@id/handiCappedDashboardFragment" />
+        <action
+            android:id="@+id/action_joinHandyCappedEventListFragment_to_joinHandyCappedDetailFragment"
+            app:destination="@id/joinHandyCappedDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/plantationDriveListFragment"
@@ -99,6 +118,9 @@
         <action
             android:id="@+id/action_plantationDriveListFragment_to_environmentalDriveDashboardFragment"
             app:destination="@id/environmentalDriveDashboardFragment" />
+        <action
+            android:id="@+id/action_plantationDriveListFragment_to_plantationDriveDetailFragment"
+            app:destination="@id/plantationDriveDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/cleanlinessDriveListFragment"
@@ -108,6 +130,9 @@
         <action
             android:id="@+id/action_cleanlinessDriveListFragment_to_environmentalDriveDashboardFragment"
             app:destination="@id/environmentalDriveDashboardFragment" />
+        <action
+            android:id="@+id/action_cleanlinessDriveListFragment_to_plantationDriveDetailFragment"
+            app:destination="@id/plantationDriveDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/freeFoodRestaurantListFragment"
@@ -126,6 +151,9 @@
         <action
             android:id="@+id/action_joinFoodDriveListFragment_to_shareAMealFragment"
             app:destination="@id/shareAMealFragment" />
+        <action
+            android:id="@+id/action_joinFoodDriveListFragment_to_joinFreeFoodDetailsFragment"
+            app:destination="@id/joinFreeFoodDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/plantationDriveDetailFragment"
@@ -135,6 +163,9 @@
         <action
             android:id="@+id/action_plantationDriveDetailFragment_to_plantationDriveListFragment"
             app:destination="@id/plantationDriveListFragment" />
+        <action
+            android:id="@+id/action_plantationDriveDetailFragment_to_appointmentScreen"
+            app:destination="@id/appointmentScreen" />
     </fragment>
     <fragment
         android:id="@+id/cleanlinessDriveFragment"
@@ -144,6 +175,9 @@
         <action
             android:id="@+id/action_cleanlinessDriveFragment_to_cleanlinessDriveListFragment"
             app:destination="@id/cleanlinessDriveListFragment" />
+        <action
+            android:id="@+id/action_cleanlinessDriveFragment_to_appointmentScreen"
+            app:destination="@id/appointmentScreen" />
     </fragment>
     <fragment
         android:id="@+id/freeFoodDetailFragment"
@@ -156,6 +190,9 @@
         <action
             android:id="@+id/action_freeFoodDetailFragment_to_freeFoodRestaurantListFragment2"
             app:destination="@id/freeFoodRestaurantListFragment" />
+        <action
+            android:id="@+id/action_freeFoodDetailFragment_to_appointmentScreen"
+            app:destination="@id/appointmentScreen" />
     </fragment>
     <fragment
         android:id="@+id/joinFreeFoodDetailsFragment"
@@ -165,6 +202,9 @@
         <action
             android:id="@+id/action_joinFreeFoodDetailsFragment_to_joinFoodDriveListFragment"
             app:destination="@id/joinFoodDriveListFragment" />
+        <action
+            android:id="@+id/action_joinFreeFoodDetailsFragment_to_appointmentScreen"
+            app:destination="@id/appointmentScreen" />
     </fragment>
     <fragment
         android:id="@+id/assistsOrphanDetailFragment"
@@ -183,6 +223,9 @@
         <action
             android:id="@+id/action_donateBloodDetailFragment_to_donateBloodListFragment"
             app:destination="@id/donateBloodListFragment" />
+        <action
+            android:id="@+id/action_donateBloodDetailFragment_to_appointmentScreen"
+            app:destination="@id/appointmentScreen" />
     </fragment>
     <fragment
         android:id="@+id/bloodCampaignDetailFragment"
@@ -192,6 +235,9 @@
         <action
             android:id="@+id/action_bloodCampaignDetailFragment_to_joinCampaignListFragment"
             app:destination="@id/joinCampaignListFragment" />
+        <action
+            android:id="@+id/action_bloodCampaignDetailFragment_to_appointmentScreen"
+            app:destination="@id/appointmentScreen" />
     </fragment>
     <fragment
         android:id="@+id/availableWheelChairDetailFragment"
@@ -201,6 +247,9 @@
         <action
             android:id="@+id/action_availableWheelChairDetailFragment_to_availableWheelChairListFragment"
             app:destination="@id/availableWheelChairListFragment" />
+        <action
+            android:id="@+id/action_availableWheelChairDetailFragment_to_appointmentScreen"
+            app:destination="@id/appointmentScreen" />
     </fragment>
     <fragment
         android:id="@+id/joinHandyCappedDetailFragment"
@@ -210,6 +259,21 @@
         <action
             android:id="@+id/action_joinHandyCappedDetailFragment_to_joinHandyCappedEventListFragment"
             app:destination="@id/joinHandyCappedEventListFragment" />
+        <action
+            android:id="@+id/action_joinHandyCappedDetailFragment_to_appointmentScreen"
+            app:destination="@id/appointmentScreen" />
     </fragment>
+    <fragment
+        android:id="@+id/appointmentScreen"
+        android:name="com.bytee.communityservice.AppointmentScreen"
+        android:label="AppointmentScreen" >
+        <action
+            android:id="@+id/action_appointmentScreen_to_successScreen"
+            app:destination="@id/successScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/successScreen"
+        android:name="com.bytee.communityservice.SuccessScreen"
+        android:label="SuccessScreen" />
 
 </navigation>

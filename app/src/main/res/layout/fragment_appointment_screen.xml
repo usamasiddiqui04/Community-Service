@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:paddingBottom="60dp"
         >
 
         <TextView
@@ -20,20 +19,10 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="Orphan Drive"
+            android:text="Regsiter to drive"
             android:fontFamily="@font/poppins_bold"
             android:textColor="@color/app_blue"
             android:textSize="24sp"/>
-
-        <ImageView
-            android:id="@+id/logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_login_24"
-            app:tint="@color/app_blue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginEnd="10dp"/>
 
         <TextView
             android:id="@+id/loginText"
@@ -41,28 +30,29 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/wc"
-            android:text="Please enter the orphans details below"
+            android:text="Please enter detail to register yourself"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/app_blue"
             android:textSize="16sp"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/managerNameTextInputLayout"
+            android:id="@+id/nameTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
-            android:hint="Manager Name"
+            android:hint="Name"
             app:helperTextTextColor="@color/red"
             android:textColorHint="@color/grey"
             app:boxStrokeColor="@color/app_blue"
+            app:boxStrokeErrorColor="@color/red"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginText"
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/managerNameEditText"
+                android:id="@+id/nameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -74,21 +64,22 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailTextInputLayout"
+            android:id="@+id/driveTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="Drive Name"
             android:textColorHint="@color/grey"
             app:boxStrokeColor="@color/app_blue"
             app:helperTextTextColor="@color/red"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/managerNameTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/nameTextInputLayout"
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailEditText"
+                android:id="@+id/driveEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -102,118 +93,46 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/orphanNameTextInputLayout"
+            android:id="@+id/phoneNumberTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Orphan Name"
+            android:hint="Phone number"
             android:textColorHint="@color/grey"
             app:boxStrokeColor="@color/app_blue"
             app:helperTextTextColor="@color/red"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/emailTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/driveTextInputLayout"
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/orphanNameEditText"
+                android:id="@+id/phoneNumberEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:paddingTop="20dp"
-                android:inputType="textPersonName"
+                android:maxLength="11"
+                android:inputType="phone"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/addressTextInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="Address"
-            android:textColorHint="@color/grey"
-            app:boxStrokeColor="@color/app_blue"
-            app:helperTextTextColor="@color/red"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/orphanNameTextInputLayout"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/addressNameEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:inputType="textPersonName"
-                android:paddingTop="20dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/desTextInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:hint="Description"
-            android:textColorHint="@color/grey"
-            app:boxStrokeColor="@color/app_blue"
-            app:helperTextTextColor="@color/red"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addressTextInputLayout"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/desNameEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_gravity="top"
-                android:gravity="top"
-                android:inputType="textMultiLine"
-                android:maxLines="5"
-                android:paddingTop="20dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
 
 
 
         <Button
-            android:id="@+id/uploadButton"
+            android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/desTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/phoneNumberTextInputLayout"
             android:background="@drawable/button_background"
-            android:layout_marginTop="20dp"
-            android:text="Upload data"
+            android:layout_marginTop="30dp"
+            android:text="Register"
             android:textColor="@color/white"
             android:padding="5dp"
             android:textAllCaps="true"
             android:fontFamily="@font/poppins_medium"/>
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:visibility="gone"/>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

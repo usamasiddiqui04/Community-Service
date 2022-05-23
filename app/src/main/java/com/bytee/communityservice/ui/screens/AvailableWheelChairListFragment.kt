@@ -6,13 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bytee.communityservice.R
 import com.bytee.communityservice.adapter.HandicapAdapter
 import com.bytee.communityservice.databinding.FragmentAvailableWheelChairListBinding
-import com.bytee.communityservice.databinding.FragmentJoinHandyCappedEventListBinding
 import com.bytee.communityservice.model.Handicap
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -39,6 +38,14 @@ class AvailableWheelChairListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    findNavController().popBackStack()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
 
         //adding a layoutmanager
         binding.rvMain.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)

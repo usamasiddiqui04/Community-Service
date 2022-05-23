@@ -156,6 +156,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/tvDateTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_regular"
@@ -181,6 +182,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/tvAddress"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_regular"
@@ -206,6 +208,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/tvDescription"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_regular"
@@ -213,6 +216,19 @@
                             android:textSize="12sp" />
 
                     </LinearLayout>
+
+                    <Button
+                        android:id="@+id/buttonRegister"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/spinnerType"
+                        android:background="@drawable/button_background"
+                        android:layout_marginTop="30dp"
+                        android:text="Register"
+                        android:textColor="@color/white"
+                        android:padding="5dp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/poppins_medium"/>
 
 
                 </LinearLayout>

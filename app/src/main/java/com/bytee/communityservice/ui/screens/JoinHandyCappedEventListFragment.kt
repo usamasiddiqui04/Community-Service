@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,6 +41,14 @@ class JoinHandyCappedEventListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //getting recyclerview from xml
 
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    findNavController().popBackStack()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
+
         //adding a layoutmanager
         binding.rvMain.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
 
@@ -61,6 +70,9 @@ class JoinHandyCappedEventListFragment : Fragment() {
 //        titleList.add("Yashar Khan")
 
         //creating our adapter
+
+
+
 
 
 
@@ -101,7 +113,7 @@ class JoinHandyCappedEventListFragment : Fragment() {
 
                                 list.add(handicap)
 
-                                val adapter = HandicapAdapter(list)
+                                val adapter = HandicapAdapter(list )
                                 binding.rvMain.adapter = adapter
 
                             }
