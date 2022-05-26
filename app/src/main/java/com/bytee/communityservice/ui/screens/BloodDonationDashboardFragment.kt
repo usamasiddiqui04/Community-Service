@@ -25,6 +25,7 @@ class BloodDonationDashboardFragment : Fragment() {
         _binding = FragmentBloodDonationDashboardBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -40,11 +41,11 @@ class BloodDonationDashboardFragment : Fragment() {
             findNavController().popBackStack()
         }
 
-        binding.ivDonateBlood.setOnClickListener {
+        binding.tvOption2.setOnClickListener {
             findNavController().navigate(R.id.donateBloodListFragment)
         }
 
-        binding.ivBloodCampaign.setOnClickListener {
+        binding.tvOption1.setOnClickListener {
             findNavController().navigate(R.id.joinCampaignListFragment)
         }
 

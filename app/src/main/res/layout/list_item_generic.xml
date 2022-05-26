@@ -32,7 +32,7 @@
                 android:lines="1"
                 android:ellipsize="end"
                 android:layout_toStartOf="@+id/iv_arrow"
-                android:textColor="@color/app_blue"
+                android:textColor="@color/app_orange"
                 android:textSize="18sp" />
 
             <TextView
@@ -56,7 +56,7 @@
                 android:layout_centerVertical="true"
                 android:padding="8dp"
                 android:src="@drawable/outline_arrow_forward_ios_white_18"
-                app:tint="@color/app_blue" />
+                app:tint="@color/app_orange" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

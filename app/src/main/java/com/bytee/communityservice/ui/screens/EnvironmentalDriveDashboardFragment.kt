@@ -35,6 +35,7 @@ class EnvironmentalDriveDashboardFragment : Fragment() {
         _binding = FragmentEnvironmentalDriveDashboardBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -49,11 +50,11 @@ class EnvironmentalDriveDashboardFragment : Fragment() {
             findNavController().popBackStack()
         }
 
-        binding.ivPlantationDrive.setOnClickListener {
+        binding.tvOption1.setOnClickListener {
             findNavController().navigate(R.id.plantationDriveListFragment)
         }
 
-        binding.ivCleannessDrive.setOnClickListener {
+        binding.tvOption2.setOnClickListener {
             findNavController().navigate(R.id.cleanlinessDriveListFragment)
         }
 

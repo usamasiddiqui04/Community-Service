@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_blue"
+    android:background="@color/app_orange"
     android:padding="16dp"
     tools:context=".ui.screens.HandiCappedDashboardFragment">
 
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tv_title"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="20dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,9 +45,9 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_main"
-                tools:listitem="@layout/list_item_generic"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                tools:listitem="@layout/list_item_generic" />
 
 
         </RelativeLayout>

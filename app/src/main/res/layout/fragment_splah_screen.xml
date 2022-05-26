@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.screens.SplashScreen">
 
@@ -27,8 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Community Service"
         android:textAlignment="center"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/open_sans_bold"
         android:textSize="26sp"
-        android:textColor="@color/app_blue"/>
+        android:textColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

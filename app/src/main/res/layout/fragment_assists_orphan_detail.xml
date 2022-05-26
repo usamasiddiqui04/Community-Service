@@ -9,7 +9,7 @@
         android:id="@+id/fl_image"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@drawable/istockphoto_1130184734_612x612">
+        android:background="@drawable/orphans_1">
 
         <ImageView
             android:id="@+id/iv_back_arrow"

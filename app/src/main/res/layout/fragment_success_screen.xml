@@ -29,6 +29,6 @@
         android:textAlignment="center"
         android:fontFamily="@font/poppins_bold"
         android:textSize="26sp"
-        android:textColor="@color/app_blue"/>
+        android:textColor="@color/app_orange"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

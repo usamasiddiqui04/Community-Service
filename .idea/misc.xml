@@ -3,6 +3,43 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/color_accent_border_rounded.xml" value="0.201" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/dashboardback.xml" value="0.149" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/rounded_corner_card.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/rounded_corner_color.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/top_left_rounded_card.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/top_rounded_card.xml" value="0.154" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/activity_dash_board.xml" value="0.1175925925925926" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/activity_main.xml" value="0.45260416666666664" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/dash_board_screen.xml" value="0.2929875120076849" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/dash_board_screen_new.xml" value="0.25" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/dummy_screen.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_assists_orphan_detail.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_available_wheel_chair_detail.xml" value="0.2824074074074074" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_available_wheel_chair_list.xml" value="0.19166666666666668" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_blood_campaign_detail.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_blood_donation_dashboard.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_cleanliness_drive_detail.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_cleanliness_drive_list.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_donate_blood_detail.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_donate_blood_list.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_environmental_drive_dashboard.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_free_food_detail.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_free_food_restaurant_list.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_handi_capped_dashboard.xml" value="0.23834339001645638" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_join_blood_campaign_list.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_join_food_drive_list.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_join_free_food_details.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_join_handy_capped_detail.xml" value="0.22" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_join_handy_capped_event_list.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_login_screen.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_plantation_drive_detail.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_plantation_drive_list.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_share_a_meal.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_singup.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_splah_screen.xml" value="0.30092592592592593" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/item_slider_dashboard.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/list_item_generic.xml" value="0.23425925925925925" />
         <entry key="app/src/main/res/drawable/button_background.xml" value="0.125" />
         <entry key="app/src/main/res/drawable/dashboardback.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/spinnerback.xml" value="0.1675" />

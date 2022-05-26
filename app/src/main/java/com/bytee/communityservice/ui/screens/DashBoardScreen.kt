@@ -6,18 +6,23 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.viewbinding.ViewBinding
 import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.DashBoardScreenBinding
-import com.bytee.communityservice.model.BloodDonor
+import com.bytee.communityservice.databinding.ItemSliderDashboardBinding
 import com.bytee.communityservice.model.Handicap
 import com.bytee.communityservice.module.RegistrationActivity
 import com.bytee.communityservice.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import org.imaginativeworld.whynotimagecarousel.listener.CarouselListener
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
+import org.imaginativeworld.whynotimagecarousel.utils.setImage
 
 
 class DashBoardScreen : Fragment() {
@@ -67,26 +72,47 @@ class DashBoardScreen : Fragment() {
 
         Log.d("TAG", "onViewCreated: ${list.size}")
 
-
-
         binding.userName.text = prefs.name
         binding.userEmail.text = prefs.email
 
-        binding.cvAssistHandycapped.setOnClickListener {
-            findNavController().navigate(R.id.handiCappedDashboardFragment)
+        binding.cvBloodDrive.setOnClickListener {
+            findNavController().navigate(R.id.donateBloodListFragment)
         }
-        binding.cvAssistOrphans.setOnClickListener {
+
+        binding.cvFoodDrive.setOnClickListener {
+            findNavController().navigate(R.id.joinFoodDriveListFragment)
+        }
+
+        binding.cvHandyCapped.setOnClickListener {
+            findNavController().navigate(R.id.joinHandyCappedEventListFragment)
+        }
+
+        binding.cvOrphansDrive.setOnClickListener {
             findNavController().navigate(R.id.assistsOrphanListFragment)
         }
-        binding.cvBloodDonation.setOnClickListener {
+
+        binding.cvPlantationDrive.setOnClickListener {
+            findNavController().navigate(R.id.plantationDriveListFragment)
+        }
+
+
+
+        binding.llAssistHandyCapped.setOnClickListener {
+            findNavController().navigate(R.id.handiCappedDashboardFragment)
+        }
+        binding.llAssistOrphanage.setOnClickListener {
+            findNavController().navigate(R.id.assistsOrphanListFragment)
+        }
+        binding.llDonateBlood.setOnClickListener {
             findNavController().navigate(R.id.bloodDonationDashboardFragment)
         }
-        binding.cvEnvDrive.setOnClickListener {
+        binding.llEnvironmental.setOnClickListener {
             findNavController().navigate(R.id.environmentalDriveDashboardFragment)
         }
-        binding.cvShareAMeal.setOnClickListener {
+        binding.llShareAMeal.setOnClickListener {
             findNavController().navigate(R.id.shareAMealFragment)
         }
 
     }
+
 }

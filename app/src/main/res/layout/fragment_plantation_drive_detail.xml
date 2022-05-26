@@ -9,7 +9,7 @@
         android:id="@+id/fl_image"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@drawable/_080885_up_tree_plantation_drive">
+        android:background="@drawable/plantation_1">
 
         <ImageView
             android:id="@+id/iv_back_arrow"

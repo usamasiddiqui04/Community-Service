@@ -43,16 +43,16 @@ class HandiCappedDashboardFragment : Fragment() {
             findNavController().popBackStack()
         }
 
-        binding.cvJoinEvent.setOnClickListener {
-            findNavController().navigate(R.id.joinHandyCappedEventListFragment)
-        }
-
-        binding.cvLocateWheelChair.setOnClickListener {
+        binding.tvOption1.setOnClickListener {
             val geoUri =
                 "http://maps.google.com/maps?q=loc:" + "wheel chair ramps"
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(geoUri))
             startActivity(intent)
         }
+        binding.tvOption2.setOnClickListener {
+            findNavController().navigate(R.id.joinHandyCappedEventListFragment)
+        }
+
 
     }
 }

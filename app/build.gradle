@@ -70,5 +70,9 @@ dependencies {
     implementation "com.airbnb.android:lottie:3.7.0"
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+    // Circle Indicator (To fix the xml preview "Missing classes" error)
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
 
 }

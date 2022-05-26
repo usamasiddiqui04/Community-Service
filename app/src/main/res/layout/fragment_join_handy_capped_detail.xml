@@ -9,7 +9,7 @@
         android:id="@+id/fl_image"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@drawable/picc">
+        android:background="@drawable/handicapped">
 
         <ImageView
             android:id="@+id/iv_back_arrow"
@@ -72,7 +72,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="25"
                         android:background="@drawable/color_accent_border_rounded"
-                        android:fontFamily="@font/poppins_regular"
+                        android:fontFamily="@font/open_sans_regular"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Maps"
@@ -221,14 +221,14 @@
                         android:id="@+id/buttonRegister"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/spinnerType"
-                        android:background="@drawable/button_background"
                         android:layout_marginTop="30dp"
-                        android:text="Register"
-                        android:textColor="@color/white"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/poppins_medium"
                         android:padding="5dp"
+                        android:text="Register"
                         android:textAllCaps="true"
-                        android:fontFamily="@font/poppins_medium"/>
+                        android:textColor="@color/white"
+                        app:layout_constraintTop_toBottomOf="@id/spinnerType" />
 
 
                 </LinearLayout>

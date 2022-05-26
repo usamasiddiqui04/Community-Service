@@ -52,7 +52,7 @@ class SplashScreen : Fragment() {
                         if (prefs.type.equals("Normal"))
                             startActivity(Intent(requireContext(), DashBoardActivity::class.java))
                         else
-                            startActivity(Intent(requireContext(), FormActivity::class.java))
+                            startActivity(Intent(requireContext(), DashBoardActivity::class.java))
 
 
                     }

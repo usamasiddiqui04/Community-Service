@@ -27,6 +27,7 @@ class ShareAMealFragment : Fragment() {
         _binding = FragmentShareAMealBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.ivBackArrow.setOnClickListener {
@@ -42,14 +43,14 @@ class ShareAMealFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
 
 
-        binding.ivAvailableRest.setOnClickListener {
+        binding.tvOption1.setOnClickListener {
             val geoUri =
                 "http://maps.google.com/maps?q=loc:" + "restaurants"
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(geoUri))
             startActivity(intent)
         }
 
-        binding.ivFoodDrive.setOnClickListener {
+        binding.tvOption2.setOnClickListener {
             findNavController().navigate(R.id.joinFoodDriveListFragment)
         }
 
