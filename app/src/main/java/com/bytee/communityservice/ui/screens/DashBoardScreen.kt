@@ -20,9 +20,6 @@ import com.bytee.communityservice.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import org.imaginativeworld.whynotimagecarousel.listener.CarouselListener
-import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
-import org.imaginativeworld.whynotimagecarousel.utils.setImage
 
 
 class DashBoardScreen : Fragment() {

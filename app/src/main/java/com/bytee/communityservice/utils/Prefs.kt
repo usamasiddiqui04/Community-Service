@@ -13,8 +13,6 @@ class Prefs (context: Context) {
         get() = appPreferences.getString(UserType, "")
         set(value) = appPreferences.edit().putString(UserType, value).apply()
 
-
-
     var name : String?
         get() = appPreferences.getString(UserName, "")
         set(value) = appPreferences.edit().putString(UserName, value).apply()
@@ -26,12 +24,6 @@ class Prefs (context: Context) {
     var phoneNumber : String?
         get() = appPreferences.getString(UserPhone, "")
         set(value) = appPreferences.edit().putString(UserPhone, value).apply()
-
-
-
-
-
-
 
 
     fun clearPreferences(){

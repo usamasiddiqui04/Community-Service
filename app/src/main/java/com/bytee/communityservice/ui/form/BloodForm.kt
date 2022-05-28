@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.bytee.communityservice.databinding.FragmentBloodFormBinding
 import com.bytee.communityservice.model.BloodDonor
 import com.bytee.communityservice.module.RegistrationActivity
+import com.bytee.communityservice.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.util.*
@@ -36,6 +37,7 @@ class BloodForm : Fragment() {
     lateinit var longitude: String
     lateinit var bloodDonor: BloodDonor
     lateinit var description: String
+    lateinit var prefs: Prefs
 
 
 
@@ -58,6 +60,8 @@ class BloodForm : Fragment() {
         databaseReference = firebaseDatabase.reference.child("Blood")
 
 
+        prefs = Prefs(requireContext())
+
         binding.logout.setOnClickListener {
             auth.signOut()
             startActivity(Intent(requireContext() ,RegistrationActivity::class.java ))
@@ -71,6 +75,11 @@ class BloodForm : Fragment() {
                 }
             }
         requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
+
+
+        binding.managerNameEditText.setText(prefs.name)
+        binding.emailEditText.setText(prefs.email)
+
 
         binding.uploadButton.setOnClickListener {
 

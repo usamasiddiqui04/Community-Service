@@ -13,6 +13,7 @@ import androidx.activity.OnBackPressedCallback
 import com.bytee.communityservice.databinding.FragmentHandicapFormBinding
 import com.bytee.communityservice.model.Handicap
 import com.bytee.communityservice.module.RegistrationActivity
+import com.bytee.communityservice.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
@@ -34,6 +35,7 @@ class HandicapForm : Fragment() {
     lateinit var latitude: String
     lateinit var longitude: String
     lateinit var description: String
+    lateinit var prefs: Prefs
 
     lateinit var handicap: Handicap
 
@@ -52,6 +54,8 @@ class HandicapForm : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+
+        prefs = Prefs(requireContext())
         firebaseDatabase = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
         // below line is used to get reference for our database.
@@ -70,6 +74,10 @@ class HandicapForm : Fragment() {
             startActivity(Intent(requireContext(), RegistrationActivity::class.java))
             activity?.finish()
         }
+
+
+        binding.managerNameEditText.setText(prefs.name)
+        binding.emailEditText.setText(prefs.email)
 
 
         binding.uploadButton.setOnClickListener {

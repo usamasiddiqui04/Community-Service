@@ -16,6 +16,7 @@ import com.bytee.communityservice.databinding.FragmentSingupBinding
 import com.bytee.communityservice.model.Environmental
 import com.bytee.communityservice.model.Handicap
 import com.bytee.communityservice.module.RegistrationActivity
+import com.bytee.communityservice.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
@@ -38,6 +39,7 @@ class EnvironmentalForm : Fragment() {
     lateinit var description: String
 
     lateinit var environment: Environmental
+    lateinit var prefs: Prefs
 
     private val timeStamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date())
 
@@ -54,6 +56,7 @@ class EnvironmentalForm : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        prefs = Prefs(requireContext())
         firebaseDatabase = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
         // below line is used to get reference for our database.
@@ -72,6 +75,8 @@ class EnvironmentalForm : Fragment() {
             startActivity(Intent(requireContext(), RegistrationActivity::class.java))
             activity?.finish()
         }
+
+        binding.emailEditText.setText(prefs.email)
 
         binding.uploadButton.setOnClickListener {
 

@@ -13,6 +13,7 @@ import com.bytee.communityservice.databinding.FragmentHandicapFormBinding
 import com.bytee.communityservice.databinding.FragmentOrphangeFormBinding
 import com.bytee.communityservice.model.Orphan
 import com.bytee.communityservice.module.RegistrationActivity
+import com.bytee.communityservice.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
@@ -33,6 +34,7 @@ class OrphangeForm : Fragment() {
     lateinit var address: String
     lateinit var orphan: Orphan
     lateinit var description: String
+    lateinit var prefs: Prefs
 
 
     private val timeStamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date())
@@ -51,6 +53,8 @@ class OrphangeForm : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+
+        prefs = Prefs(requireContext())
         firebaseDatabase = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
         // below line is used to get reference for our database.
@@ -69,6 +73,10 @@ class OrphangeForm : Fragment() {
             startActivity(Intent(requireContext(), RegistrationActivity::class.java))
             activity?.finish()
         }
+
+
+        binding.managerNameEditText.setText(prefs.name)
+        binding.emailEditText.setText(prefs.email)
 
 
 
