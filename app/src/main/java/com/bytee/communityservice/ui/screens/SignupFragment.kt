@@ -63,9 +63,9 @@ class SignupFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
 
 
-        val adapter = ArrayAdapter(requireContext(), R.layout.simple_spinner_item, acountType)
+        val adapter = ArrayAdapter(requireContext(), com.bytee.communityservice.R.layout.spinner_item, acountType)
 
-        adapter.setDropDownViewResource(R.layout.simple_spinner_item)
+        adapter.setDropDownViewResource(com.bytee.communityservice.R.layout.spinner_item)
 
         binding.spinnerType.adapter = adapter
 
