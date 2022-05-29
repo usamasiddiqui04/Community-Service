@@ -26,7 +26,7 @@
         app:layout_constraintTop_toBottomOf="@id/animation_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Community Service"
+        android:text="@string/app_name"
         android:textAlignment="center"
         android:fontFamily="@font/open_sans_bold"
         android:textSize="26sp"

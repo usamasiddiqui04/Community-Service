@@ -115,7 +115,6 @@ class HandicapForm : Fragment() {
     }
 
     private fun uploadData() {
-
         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 

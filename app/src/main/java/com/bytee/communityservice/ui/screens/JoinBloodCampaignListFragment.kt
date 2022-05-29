@@ -70,6 +70,7 @@ class JoinCampaignListFragment : Fragment() {
 
 
     private fun getList() {
+        list.clear()
         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 

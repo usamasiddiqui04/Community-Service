@@ -72,16 +72,13 @@ class JoinHandyCappedEventListFragment : Fragment() {
         //creating our adapter
 
 
-
-
-
-
         binding.ivBackArrow.setOnClickListener {
             findNavController().popBackStack()
         }
     }
 
     private fun getList() {
+        list.clear()
         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
@@ -113,7 +110,7 @@ class JoinHandyCappedEventListFragment : Fragment() {
 
                                 list.add(handicap)
 
-                                val adapter = HandicapAdapter(list )
+                                val adapter = HandicapAdapter(list)
                                 binding.rvMain.adapter = adapter
 
                             }
