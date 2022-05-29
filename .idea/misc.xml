@@ -7,6 +7,7 @@
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/dashboardback.xml" value="0.149" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/rounded_corner_card.xml" value="0.1" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/rounded_corner_color.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/spinnerback.xml" value="0.1" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/top_left_rounded_card.xml" value="0.1" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/drawable/top_rounded_card.xml" value="0.154" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/activity_dash_board.xml" value="0.1175925925925926" />
@@ -37,7 +38,7 @@
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_plantation_drive_detail.xml" value="0.209375" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_plantation_drive_list.xml" value="0.209375" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_share_a_meal.xml" value="0.1" />
-        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_singup.xml" value="0.209375" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_singup.xml" value="0.17647058823529413" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_splah_screen.xml" value="0.30092592592592593" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/item_slider_dashboard.xml" value="0.1" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/list_item_generic.xml" value="0.23425925925925925" />

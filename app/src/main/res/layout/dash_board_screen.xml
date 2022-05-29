@@ -30,8 +30,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/open_sans_semi_bold"
             android:text="Usama Ali"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
 
 
         <TextView
@@ -41,8 +41,8 @@
             android:layout_below="@+id/userName"
             android:fontFamily="@font/open_sans_regular"
             android:text="usama@gmail.com"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/dashTextview"
@@ -52,7 +52,7 @@
             android:fontFamily="@font/open_sans_bold"
             android:text="Community Services"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
     </LinearLayout>
 
 

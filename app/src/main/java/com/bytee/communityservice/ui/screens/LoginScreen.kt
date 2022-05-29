@@ -63,20 +63,6 @@ class LoginScreen : Fragment() {
             }
         requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
 
-
-        binding.showPassword.setOnClickListener {
-            binding.passWordEditText.transformationMethod = null
-            binding.hidePassword.visibility = View.VISIBLE
-            binding.showPassword.visibility = View.GONE
-        }
-
-        binding.hidePassword.setOnClickListener {
-            binding.passWordEditText.transformationMethod = PasswordTransformationMethod()
-            binding.hidePassword.visibility = View.GONE
-            binding.showPassword.visibility = View.VISIBLE
-        }
-
-
         binding.buttonLogin.setOnClickListener {
             email = binding.emailEditText.text.toString()
             password = binding.passWordEditText.text.toString()
