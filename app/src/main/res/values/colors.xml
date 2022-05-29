@@ -19,6 +19,7 @@
     <color name="new_gray_dark">#41414d</color>
     <color name="new_gray_light">#5a5a66</color>
     <color name="new_main_color">#f8a271</color>
+    <color name="spinner_corner_gray">#33333b</color>
 </resources>
 
 <!--opacity values-->
