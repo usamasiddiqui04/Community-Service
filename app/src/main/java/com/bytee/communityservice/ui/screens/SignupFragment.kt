@@ -69,31 +69,6 @@ class SignupFragment : Fragment() {
 
         binding.spinnerType.adapter = adapter
 
-        binding.showPassword.setOnClickListener {
-            binding.passWordEditText.transformationMethod = null
-            binding.hidePassword.visibility = View.VISIBLE
-            binding.showPassword.visibility = View.GONE
-        }
-
-        binding.hidePassword.setOnClickListener {
-            binding.passWordEditText.transformationMethod = PasswordTransformationMethod()
-            binding.hidePassword.visibility = View.GONE
-            binding.showPassword.visibility = View.VISIBLE
-        }
-
-
-        binding.showConfirmPassword.setOnClickListener {
-            binding.confirmPassWordEditText.transformationMethod = null
-            binding.hideConfirmPassword.visibility = View.VISIBLE
-            binding.showConfirmPassword.visibility = View.GONE
-        }
-
-        binding.hideConfirmPassword.setOnClickListener {
-            binding.confirmPassWordEditText.transformationMethod = PasswordTransformationMethod()
-            binding.hideConfirmPassword.visibility = View.GONE
-            binding.showConfirmPassword.visibility = View.VISIBLE
-        }
-
         binding.singupTextView.setOnClickListener {
             findNavController().popBackStack()
         }
