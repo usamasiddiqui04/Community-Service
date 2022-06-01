@@ -13,7 +13,7 @@
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/activity_dash_board.xml" value="0.1175925925925926" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/activity_main.xml" value="0.45260416666666664" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/custom_item_layout.xml" value="0.1" />
-        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/dash_board_screen.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/dash_board_screen.xml" value="0.33" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/dash_board_screen_new.xml" value="0.25" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/dummy_screen.xml" value="0.209375" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_assists_orphan_detail.xml" value="0.209375" />
@@ -22,6 +22,7 @@
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_available_wheel_chair_list.xml" value="0.19166666666666668" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_blood_campaign_detail.xml" value="0.209375" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_blood_donation_dashboard.xml" value="0.1" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_blood_form.xml" value="0.1" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_cleanliness_drive_detail.xml" value="0.209375" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_cleanliness_drive_list.xml" value="0.209375" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/fragment_donate_blood_detail.xml" value="0.209375" />
@@ -44,6 +45,7 @@
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/item_slider_dashboard.xml" value="0.1" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/list_item_generic.xml" value="0.23425925925925925" />
         <entry key="..\:/Development/projects/Community-Service/app/src/main/res/layout/spinner_item.xml" value="0.22" />
+        <entry key="..\:/Development/projects/Community-Service/app/src/main/res/menu/drawer_menu.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/button_background.xml" value="0.125" />
         <entry key="app/src/main/res/drawable/dashboardback.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/spinnerback.xml" value="0.1675" />

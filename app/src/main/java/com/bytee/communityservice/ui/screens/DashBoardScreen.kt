@@ -1,19 +1,25 @@
 package com.bytee.communityservice.ui.screens
 
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.view.Gravity.LEFT
+import android.view.Gravity.RIGHT
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
 import com.bytee.communityservice.R
 import com.bytee.communityservice.databinding.DashBoardScreenBinding
 import com.bytee.communityservice.model.Handicap
 import com.bytee.communityservice.module.RegistrationActivity
 import com.bytee.communityservice.utils.Prefs
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -61,9 +67,10 @@ class DashBoardScreen : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
 
         binding.logout.setOnClickListener {
-            auth.signOut()
-            startActivity(Intent(requireContext(), RegistrationActivity::class.java))
-            activity?.finish()
+            binding.drawerLayout.openDrawer(LEFT)
+//            auth.signOut()
+//            startActivity(Intent(requireContext(), RegistrationActivity::class.java))
+//            activity?.finish()
         }
 
         Log.d("TAG", "onViewCreated: ${list.size}")
@@ -173,6 +180,37 @@ class DashBoardScreen : Fragment() {
                 }
             }
         }
+        binding.nvView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.item_faqs -> {
+                    binding.drawerLayout.closeDrawer(LEFT)
+                    val url = "https://api.whatsapp.com/send?phone=${+923155254086}"
+                    val i = Intent(Intent.ACTION_VIEW)
+                    i.data = Uri.parse(url)
+                    startActivity(i)
+//                    return true
+                }
+
+                R.id.item_discover -> {
+                    binding.drawerLayout.closeDrawer(LEFT)
+                    val url = "https://api.whatsapp.com/send?phone=${+923155254086}"
+                    val i = Intent(Intent.ACTION_VIEW)
+                    i.data = Uri.parse(url)
+                    startActivity(i)
+//                    return true
+                }
+                R.id.item_logout -> {
+                    binding.drawerLayout.closeDrawer(LEFT)
+                    auth.signOut()
+                    startActivity(Intent(requireContext(), RegistrationActivity::class.java))
+                    activity?.finish()
+//                    return true
+                }
+            }
+
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+            true
+        }
 
 
 //        binding.cvBloodDrive.setOnClickListener {
@@ -212,6 +250,43 @@ class DashBoardScreen : Fragment() {
 //            findNavController().navigate(R.id.shareAMealFragment)
 //        }
 
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.drawer_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // The action bar home/up action should open or close the drawer.
+        when (item.itemId) {
+            R.id.item_faqs -> {
+                binding.drawerLayout.openDrawer(RIGHT)
+                val url = "https://api.whatsapp.com/send?phone=${+923155254086}"
+                val i = Intent(Intent.ACTION_VIEW)
+                i.data = Uri.parse(url)
+                startActivity(i)
+                return true
+            }
+
+            R.id.item_discover -> {
+                binding.drawerLayout.openDrawer(RIGHT)
+                val url = "https://api.whatsapp.com/send?phone=${+923155254086}"
+                val i = Intent(Intent.ACTION_VIEW)
+                i.data = Uri.parse(url)
+                startActivity(i)
+                return true
+            }
+            R.id.item_logout -> {
+                binding.drawerLayout.openDrawer(RIGHT)
+                auth.signOut()
+                startActivity(Intent(requireContext(), RegistrationActivity::class.java))
+                activity?.finish()
+                return true
+            }
+        }
+        return true//super.onOptionsItemSelected(item)
     }
 
 }
