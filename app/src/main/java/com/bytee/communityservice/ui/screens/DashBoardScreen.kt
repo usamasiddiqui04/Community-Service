@@ -129,57 +129,6 @@ class DashBoardScreen : Fragment() {
                 }
             }
         }
-
-        val listCarouselDashboard = mutableListOf<CarouselItem>()
-        // Image drawable with caption
-        listCarouselDashboard.add(
-            CarouselItem(
-                imageDrawable = R.drawable.scap,
-                caption = "Assist Handicapped"
-            )
-        )
-        listCarouselDashboard.add(
-            CarouselItem(
-                imageDrawable = R.drawable.edrive,
-                caption = "Environmental Drives"
-            )
-        )
-        listCarouselDashboard.add(
-            CarouselItem(
-                imageDrawable = R.drawable.donateblood,
-                caption = "Blood Donation"
-            )
-        )
-        listCarouselDashboard.add(
-            CarouselItem(
-                imageDrawable = R.drawable.orphans,
-                caption = "Assist Orphans"
-            )
-        )
-        listCarouselDashboard.add(
-            CarouselItem(
-                imageDrawable = R.drawable.smeal,
-                caption = "Share A Meal"
-            )
-        )
-
-        binding.carouselDashboardItems.setData(listCarouselDashboard)
-
-        // Carousel listener
-        binding.carouselDashboardItems.carouselListener = object : CarouselListener {
-            override fun onClick(position: Int, carouselItem: CarouselItem) {
-                when (position) {
-                    0 -> findNavController().navigate(R.id.handiCappedDashboardFragment)
-                    1 -> findNavController().navigate(R.id.assistsOrphanListFragment)
-                    2 -> findNavController().navigate(R.id.bloodDonationDashboardFragment)
-                    3 -> findNavController().navigate(R.id.environmentalDriveDashboardFragment)
-                    4 -> findNavController().navigate(R.id.shareAMealFragment)
-                    else -> {
-                        findNavController().navigate(R.id.handiCappedDashboardFragment)
-                    }
-                }
-            }
-        }
         binding.nvView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.item_faqs -> {
@@ -212,43 +161,34 @@ class DashBoardScreen : Fragment() {
             true
         }
 
+        binding.cvBlood.setOnClickListener {
+            findNavController().navigate(R.id.bloodDonationDashboardFragment)
+        }
 
-//        binding.cvBloodDrive.setOnClickListener {
-//            findNavController().navigate(R.id.donateBloodListFragment)
-//        }
-//
-//        binding.cvFoodDrive.setOnClickListener {
-//            findNavController().navigate(R.id.joinFoodDriveListFragment)
-//        }
-//
-//        binding.cvHandyCapped.setOnClickListener {
-//            findNavController().navigate(R.id.joinHandyCappedEventListFragment)
-//        }
-//
-//        binding.cvOrphansDrive.setOnClickListener {
-//            findNavController().navigate(R.id.assistsOrphanListFragment)
-//        }
-//
-//        binding.cvPlantationDrive.setOnClickListener {
-//            findNavController().navigate(R.id.plantationDriveListFragment)
-//        }
+        binding.cvSmeal.setOnClickListener {
+            findNavController().navigate(R.id.shareAMealFragment)
+        }
 
-//
-//        binding.llAssistHandyCapped.setOnClickListener {
-//            findNavController().navigate(R.id.handiCappedDashboardFragment)
-//        }
-//        binding.llAssistOrphanage.setOnClickListener {
-//            findNavController().navigate(R.id.assistsOrphanListFragment)
-//        }
-//        binding.llDonateBlood.setOnClickListener {
-//            findNavController().navigate(R.id.bloodDonationDashboardFragment)
-//        }
-//        binding.llEnvironmental.setOnClickListener {
+        binding.cvAcap.setOnClickListener {
+            findNavController().navigate(R.id.handiCappedDashboardFragment)
+        }
+
+        binding.cvOrphans.setOnClickListener {
+            findNavController().navigate(R.id.assistsOrphanListFragment)
+        }
+
+        binding.cvEdrive.setOnClickListener {
+            findNavController().navigate(R.id.environmentalDriveDashboardFragment)
+        }
+        binding.tvDashboard.setOnClickListener {
 //            findNavController().navigate(R.id.environmentalDriveDashboardFragment)
-//        }
-//        binding.llShareAMeal.setOnClickListener {
-//            findNavController().navigate(R.id.shareAMealFragment)
-//        }
+        }
+        binding.tvWhatsapp.setOnClickListener {
+            val url = "https://api.whatsapp.com/send?phone=${+923155254086}"
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(url)
+            startActivity(i)
+        }
 
     }
 
